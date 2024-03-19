@@ -16,6 +16,7 @@ namespace TimeTravelAgency.DAL.Repositories
         {
             _db = db;
         }
+
         public Task Create(T entity)
         {
             throw new NotImplementedException();
