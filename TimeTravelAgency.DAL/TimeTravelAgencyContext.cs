@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using NPOI.SS.Formula.Functions;
 using TimeTravelAgency.Domain.Entity;
 
 namespace TimeTravelAgency.DAL
@@ -23,7 +22,6 @@ namespace TimeTravelAgency.DAL
         public virtual DbSet<Tour> Tours { get; set; } = null!;
         public virtual DbSet<Uprofile> Uprofiles { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
