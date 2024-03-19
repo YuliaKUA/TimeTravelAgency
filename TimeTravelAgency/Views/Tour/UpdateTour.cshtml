@@ -1,0 +1,49 @@
+﻿@model TimeTravelAgency.Domain.Entity.Tour
+@using TimeTravelAgency.Domain.Enum
+
+@{
+    ViewBag.Title = "Изменить тур";
+    Layout = "_Layout";
+}
+
+<h2>Изменить тур  «@Model.Title»</h2>
+<form asp-action="UpdateTour" asp-controller="Tour">
+    <p>
+        
+        <label asp-for="TypeTour">Тип тура</label><br />
+        <select asp-for="TypeTour" asp-items="Html.GetEnumSelectList<TimeTravelAgency.Domain.Enum.TypeTour>()"></select>
+    </p>
+    <p>
+        
+        <label asp-for="Title">Новое название: </label>
+        <input type="text" asp-for="Title" />
+    </p>
+    <p>
+       
+        <label asp-for="DateStart">Новая дата начала: </label>
+        <input type="date" asp-for="DateStart" />
+    </p>
+    <p>
+        
+        <label asp-for="DateEnd">Новая дата окончания: </label>
+        <input type="date" asp-for="DateEnd" />
+    </p>
+    <p>
+        
+        <label asp-for="Descriptions">Новое описание: </label>
+        <input type="text" asp-for="Descriptions" />
+    </p>
+    <p>
+        
+        <label asp-for="Price">Новая цена: </label>
+        <input type="number" asp-for="Price" /> ₽
+    </p>
+    <p>
+        
+        <label asp-for="NumberOfPlaces">Обновленное количество мест: </label>
+        <input type="number" asp-for="NumberOfPlaces" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>

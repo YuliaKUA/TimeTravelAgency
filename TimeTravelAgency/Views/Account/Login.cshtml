@@ -1,0 +1,26 @@
+﻿@model TimeTravelAgency.Domain.ViewModels.Account.LoginViewModel
+
+@{
+    ViewBag.Title = "Вход";
+    Layout = "_Layout";
+}
+
+<h2>Зарегестрироваться</h2>
+<form asp-action="Login" asp-controller="Account">
+    <div>
+        <div class="validation" asp-validation-summary="All"></div>
+    <p>
+        <label asp-for="Login">Логин</label><br />
+        <input type="text" asp-for="Login" />
+        <span asp-validation-for="Login"></span>
+    </p>
+    <p>
+        <label asp-for="Password">Пароль</label><br />
+        <input type="password" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </p>
+    <p>
+        <input type="submit" value="Войти" />
+    </p>
+    </div>
+</form>

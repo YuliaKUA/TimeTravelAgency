@@ -1,0 +1,14 @@
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\bin\Debug\net6.0\TimeTravelAgency.Domain.deps.json
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\bin\Debug\net6.0\TimeTravelAgency.Domain.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\bin\Debug\net6.0\TimeTravelAgency.Domain.pdb
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.csproj.AssemblyReference.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.AssemblyInfoInputs.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.AssemblyInfo.cs
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.csproj.CoreCompileInputs.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\refint\TimeTravelAgency.Domain.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.pdb
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\ref\TimeTravelAgency.Domain.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\bin\Debug\net6.0\TimeTravelAgency.Domain.runtimeconfig.json
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.Domain\obj\Debug\net6.0\TimeTravelAgency.Domain.genruntimeconfig.cache

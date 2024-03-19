@@ -1,0 +1,17 @@
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\bin\Debug\net6.0\TimeTravelAgency.DAL.deps.json
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\bin\Debug\net6.0\TimeTravelAgency.DAL.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\bin\Debug\net6.0\TimeTravelAgency.DAL.pdb
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.csproj.AssemblyReference.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.AssemblyInfoInputs.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.AssemblyInfo.cs
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.csproj.CoreCompileInputs.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\refint\TimeTravelAgency.DAL.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.pdb
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\ref\TimeTravelAgency.DAL.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\bin\Debug\net6.0\TimeTravelAgency.DAL.runtimeconfig.json
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.genruntimeconfig.cache
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\bin\Debug\net6.0\TimeTravelAgency.Domain.dll
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\bin\Debug\net6.0\TimeTravelAgency.Domain.pdb
+C:\Project\C#\TimeTravelAgency\TimeTravelAgency.DAL\obj\Debug\net6.0\TimeTravelAgency.DAL.csproj.CopyComplete

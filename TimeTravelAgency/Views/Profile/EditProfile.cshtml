@@ -1,0 +1,36 @@
+﻿@model TimeTravelAgency.Domain.ViewModels.Profile.ProfileViewModel
+@{
+    ViewBag.Title = "Изменить профиль";
+    Layout = "_Layout";
+}
+<h2>Изменить профиль  «@User.Identity.Name»</h2>
+<form asp-action="EditProfile" asp-controller="Profile">
+    <div class="validation" asp-validation-summary="All"></div>
+    <p>
+        <label asp-for="FirstName"> Имя </label>
+        <input type="text" asp-for="FirstName" />
+    </p>
+    <p>
+        <label asp-for="LastName"> Фамилия </label>
+        <input type="text" asp-for="LastName" />
+    </p>
+    <p>
+        <label asp-for="Age"> Возраст </label>
+        <input type="number" asp-for="Age" />
+    </p>
+    <p>
+        <label asp-for="Email"> Email </label>
+        <input type="email" asp-for="Email" />
+    </p>
+    <p>
+        <label asp-for="Phone"> Телефон </label>
+        <input type="tel" asp-for="Phone" />
+    </p>
+    <p>
+        <label asp-for="Uaddress"> Адрес </label>
+        <input type="text" asp-for="Uaddress" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>

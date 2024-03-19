@@ -1,0 +1,25 @@
+﻿@using TimeTravelAgency.Domain.Entity
+@using TimeTravelAgency.Domain.Enum
+@model List<TimeTravelAgency.Domain.Entity.Tour>
+
+@{
+    ViewBag.Title = "Список туров";
+    Layout = "_Layout";
+}
+
+<p> Добавить новый тур: <a asp-controller="Tour" asp-action="CreateTour"> Добавить </a> </p> 
+
+
+@foreach(var tour in Model){
+    <div>
+        <h3>@tour.Title</h3>
+        <p>@EnumExtensions.GetDisplayName(tour.TypeTour)</p>
+        <p>@tour.DateStart - @tour.DateEnd</p>
+        <p>@tour.Descriptions</p>
+        <p>Цена: @tour.Price ₽</p>
+        <p>Количество мест: @tour.NumberOfPlaces</p>
+        <a asp-controller="Tour" asp-action="UpdateTour" asp-route-id="@tour.Id" >Изменить</a>
+        <a asp-controller="Tour" asp-action="DeleteTour" asp-route-id="@tour.Id" >Удалить</a>
+    </div>
+}
+
