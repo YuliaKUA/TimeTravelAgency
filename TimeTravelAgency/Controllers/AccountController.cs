@@ -6,6 +6,7 @@ using TimeTravelAgency.Domain.ViewModels.Account;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TimeTravelAgency.Controllers
 {
@@ -20,6 +21,7 @@ namespace TimeTravelAgency.Controllers
             _profileService = profileService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {

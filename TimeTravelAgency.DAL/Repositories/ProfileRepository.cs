@@ -49,6 +49,11 @@ namespace TimeTravelAgency.DAL.Repositories
             return _db.Uprofiles.ToListAsync();
         }
 
+        public Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Uprofile> Update(Uprofile entity)
         {
             _db.Uprofiles.Update(entity);

@@ -18,6 +18,7 @@
         <p>@tour.Descriptions</p>
         <p>Цена: @tour.Price ₽</p>
         <p>Количество мест: @tour.NumberOfPlaces</p>
+        <a asp-controller="Tour" asp-action="TourInfo" asp-route-id="@tour.Id" >Подробнее</a><br>
         <a asp-controller="Tour" asp-action="UpdateTour" asp-route-id="@tour.Id" >Изменить</a>
         <a asp-controller="Tour" asp-action="DeleteTour" asp-route-id="@tour.Id" >Удалить</a>
     </div>

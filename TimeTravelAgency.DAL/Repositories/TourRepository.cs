@@ -50,6 +50,11 @@ namespace TimeTravelAgency.DAL.Repositories
             return _db.Tours.ToListAsync();
         }
 
+        public Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Tour> Update(Tour entity)
         {
             _db.Tours.Update(entity);

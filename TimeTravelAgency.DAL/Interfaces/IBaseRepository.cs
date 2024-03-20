@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TimeTravelAgency.Domain.Entity;
 
 namespace TimeTravelAgency.DAL.Interfaces
 {
@@ -16,6 +17,6 @@ namespace TimeTravelAgency.DAL.Interfaces
         Task Delete(T entity);
 
         IQueryable<T> GetAll();
-
+        Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId);
     }
 }

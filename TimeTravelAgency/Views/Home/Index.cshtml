@@ -23,6 +23,10 @@
      <form method="post" asp-controller="Account" asp-action="Logout">
         <input  type="submit" value="Выход" />
      </form>
+
+     <form method="post" asp-controller="Order" asp-action="GetBasket" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">
+        <input  type="submit" value="Корзина" />
+     </form>
 }
 else
 {

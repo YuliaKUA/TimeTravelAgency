@@ -1,0 +1,16 @@
+﻿@model TimeTravelAgency.Domain.Entity.Tour
+@using System.Security.Claims;
+@using TimeTravelAgency.Domain.Enum
+
+@{
+    ViewBag.Title = "Информация";
+    Layout = "_Layout";
+}
+
+<h2>«@Model.Title»</h2>
+<p>@EnumExtensions.GetDisplayName(Model.TypeTour)</p>
+<p>@Model.DateStart - @Model.DateEnd</p>
+<p>@Model.Descriptions</p>
+<p>Цена: @Model.Price ₽</p>
+<p>Количество мест: @Model.NumberOfPlaces</p>
+<a asp-controller="Order" asp-action="CreateOrder" asp-route-tourId="@Model.Id" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)" >Купить</a>
