@@ -10,10 +10,11 @@ namespace TimeTravelAgency.Service.Interfaces
 {
     public interface IOrderService
     {
-        Task<IBaseResponse<Order>> CreateOrder(Order order);
+        Task<IBaseResponse<Order>> AddTourToCart(Order order);
         Task<IBaseResponse<bool>> DeleteOrderById(int id);
         Task<IBaseResponse<Order>> GetOrderById(int id);
         Task<IBaseResponse<IQueryable<ExtendedOrder>>> GetOrders(int userId);
         Task<IBaseResponse<Order>> Edit(int id, Order order);
+        Task<IBaseResponse<bool>> CreateOrder(int userId);
     }
 }

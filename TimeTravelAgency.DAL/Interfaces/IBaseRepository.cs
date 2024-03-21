@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TimeTravelAgency.Domain.Entity;
+using TimeTravelAgency.Domain.Enum;
 
 namespace TimeTravelAgency.DAL.Interfaces
 {
@@ -15,8 +16,10 @@ namespace TimeTravelAgency.DAL.Interfaces
         Task<List<T>> SelectAll();
         Task<T> Update(T entity);
         Task Delete(T entity);
+        Task UpdateRange(IEnumerable<T> values);
 
         IQueryable<T> GetAll();
-        Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId);
+        Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId, StatusOrder status);
+        Task<IEnumerable<Order>> SelectOrder(int userId, StatusOrder status);
     }
 }

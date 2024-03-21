@@ -18,5 +18,6 @@ namespace TimeTravelAgency.Domain.Entity
         public DateTime? DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
         public string? Descriptions { get; set; }
+        public string? Number { get; set; }
     }
 }

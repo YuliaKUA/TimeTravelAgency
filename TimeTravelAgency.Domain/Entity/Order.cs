@@ -11,6 +11,7 @@ namespace TimeTravelAgency.Domain.Entity
         public int? UserId { get; set; }
         public DateTime? DateCreate { get; set; }
         public StatusOrder Status { get; set; }
+        public string? Number { get; set; }
 
         public virtual Tour? Tour { get; set; }
         public virtual User? User { get; set; }

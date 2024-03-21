@@ -17,17 +17,17 @@ namespace TimeTravelAgency.Controllers
             _orderService = orderService;
             _tourService = tourService;
         }
-        public async Task<IActionResult> CreateOrder(int tourId, int userId)
+        public async Task<IActionResult> AddTourToCart(int tourId, int userId)
         {
             Order order = new Order
             {
                 TourId = tourId,
                 UserId = userId,
                 DateCreate = DateTime.Now,
-                Status = StatusOrder.Сreated
+                Status = StatusOrder.InCart
             };
 
-            var response = await _orderService.CreateOrder(order);
+            var response = await _orderService.AddTourToCart(order);
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 return RedirectToAction("Index", "Home");
@@ -35,23 +35,13 @@ namespace TimeTravelAgency.Controllers
 
             return RedirectToAction("Error");
         }
-        [HttpPost, HttpGet]
-        public async Task<IActionResult> GetBasket(int userId)
-        {
-            var response = await _orderService.GetOrders(userId);
-            if (response.StatusCode == Domain.Enum.StatusCode.OK)
-            {
-                return View(response.Data.ToList());
-            }
-            return RedirectToAction("Error");
-        }
 
-        public async Task<IActionResult> DeleteOrder(int id)
+        public async Task<IActionResult> CreateOrder(int userId)
         {
-            var response = await _orderService.DeleteOrderById(id);
+            var response = await _orderService.CreateOrder(userId);
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
-                return RedirectToAction("GetBasket", new { userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value) });
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Error");
         }

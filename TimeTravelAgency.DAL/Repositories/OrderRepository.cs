@@ -50,10 +50,10 @@ namespace TimeTravelAgency.DAL.Repositories
             return _db.Orders.ToListAsync();
         }
 
-        public async Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId)
+        public async Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId, StatusOrder status)
         {
             var extendedOrders = await (from o in _db.Orders
-                                        where o.UserId == userId
+                                        where o.UserId == userId && o.Status == (StatusOrder)Convert.ToInt32(status)
                                         join t in _db.Tours on o.TourId equals t.Id
                                         select new ExtendedOrder
                                         {
@@ -66,9 +66,27 @@ namespace TimeTravelAgency.DAL.Repositories
                                             DateStart = t.DateStart,
                                             DateEnd = t.DateEnd,
                                             Descriptions = t.Descriptions,
+                                            Number = o.Number,
                                         }).ToListAsync();
 
             return extendedOrders.AsQueryable();
+        }
+
+        public async Task<IEnumerable<Order>> SelectOrder(int userId, StatusOrder status)
+        {
+            var extendedOrders = await (from o in _db.Orders
+                                        where o.UserId == userId && o.Status == status
+                                        select new Order
+                                        {
+                                            Id = o.Id,
+                                            TourId = o.TourId,
+                                            UserId = o.UserId,
+                                            DateCreate = o.DateCreate,
+                                            Status = o.Status,
+                                            Number = o.Number,
+                                        }).ToListAsync();
+
+            return extendedOrders.AsEnumerable();
         }
 
         public async Task<Order> Update(Order entity)
@@ -77,6 +95,12 @@ namespace TimeTravelAgency.DAL.Repositories
             await _db.SaveChangesAsync();
 
             return entity;
+        }
+
+        public async Task UpdateRange(IEnumerable<Order> values)
+        {
+            _db.UpdateRange(values);
+            await _db.SaveChangesAsync();
         }
     }
 }

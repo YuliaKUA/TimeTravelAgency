@@ -1,0 +1,26 @@
+﻿@using System.Security.Claims;
+@using TimeTravelAgency.Domain.Entity
+@using TimeTravelAgency.Domain.Enum
+@model List<TimeTravelAgency.Domain.Entity.ExtendedOrder>
+
+@{
+    ViewBag.Title = "Корзина";
+    Layout = "_Layout";
+}
+<h2>Корзина</h2>
+
+@if (Model != null)
+{
+    @foreach (var order in Model)
+    {
+        <div>
+            <h3>@order.Title</h3>
+            <p>@order.DateStart - @order.DateEnd</p>
+            <p>@order.DateCreate</p>
+            <p>@EnumExtensions.GetDisplayName(order.Status)</p>
+            <a asp-controller="Cart" asp-action="DeleteTourFromCart" asp-route-id="@order.Id" >Удалить</a>
+        </div>
+    }
+
+<a asp-controller="Order" asp-action="CreateOrder" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)" >Оплатить заказ</a>
+}

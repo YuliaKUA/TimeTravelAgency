@@ -24,7 +24,7 @@
         <input  type="submit" value="Выход" />
      </form>
 
-     <form method="post" asp-controller="Order" asp-action="GetBasket" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">
+     <form method="post" asp-controller="Cart" asp-action="GetCart" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">
         <input  type="submit" value="Корзина" />
      </form>
 }

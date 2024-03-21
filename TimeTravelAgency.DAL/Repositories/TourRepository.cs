@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TimeTravelAgency.DAL.Interfaces;
 using TimeTravelAgency.Domain.Entity;
+using TimeTravelAgency.Domain.Enum;
 
 namespace TimeTravelAgency.DAL.Repositories
 {
@@ -50,7 +51,12 @@ namespace TimeTravelAgency.DAL.Repositories
             return _db.Tours.ToListAsync();
         }
 
-        public Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId)
+        public Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId, StatusOrder status)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Order>> SelectOrder(int userId, StatusOrder status)
         {
             throw new NotImplementedException();
         }
@@ -61,6 +67,11 @@ namespace TimeTravelAgency.DAL.Repositories
             await _db.SaveChangesAsync();
 
             return entity;
+        }
+
+        public Task UpdateRange(IEnumerable<Tour> values)
+        {
+            throw new NotImplementedException();
         }
     }
 }

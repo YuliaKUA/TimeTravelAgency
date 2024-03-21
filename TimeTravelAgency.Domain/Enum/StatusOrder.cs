@@ -20,5 +20,7 @@ namespace TimeTravelAgency.Domain.Enum
         Confirmed = 3,
         [Display(Name = "Отменен")]
         Cancelled = 4,
+        [Display(Name = "В корзине")]
+        InCart = 5,
     }
 }
