@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using TimeTravelAgency.Domain.Entity;
@@ -22,6 +24,7 @@ namespace TimeTravelAgency.DAL
         public virtual DbSet<Tour> Tours { get; set; } = null!;
         public virtual DbSet<Uprofile> Uprofiles { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

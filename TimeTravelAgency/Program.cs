@@ -15,14 +15,18 @@ string connection = builder.Configuration.GetConnectionString("DefaultConnection
 // добавляем контекст ApplicationContext в качестве сервиса в приложение
 builder.Services.AddDbContext<TimeTravelAgencyContext>(options => options.UseSqlServer(connection));
 
-builder.Services.AddScoped<IBaseRepository<Tour>, TourRepository>();
-builder.Services.AddScoped<ITourService, TourService>();
-builder.Services.AddScoped<IBaseRepository<User>, UserRepository>();
+//
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<ITourRepository, TourRepository>();
+
 builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IBaseRepository<Uprofile>, ProfileRepository>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
-builder.Services.AddScoped<IBaseRepository<Order>, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<ITourService, TourService>();
+
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

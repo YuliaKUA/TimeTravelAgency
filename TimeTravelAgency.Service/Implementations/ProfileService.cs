@@ -15,9 +15,9 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class ProfileService : IProfileService
     {
-        private readonly IBaseRepository<Uprofile> _profileRepository;
+        private readonly IProfileRepository _profileRepository;
 
-        public ProfileService(IBaseRepository<Uprofile> profileRepository)
+        public ProfileService(IProfileRepository profileRepository)
         {
             _profileRepository = profileRepository;
         }

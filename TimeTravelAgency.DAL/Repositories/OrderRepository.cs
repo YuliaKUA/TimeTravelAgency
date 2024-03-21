@@ -10,44 +10,18 @@ using TimeTravelAgency.Domain.Enum;
 
 namespace TimeTravelAgency.DAL.Repositories
 {
-    public class OrderRepository : IBaseRepository<Order>
+    public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
         private readonly TimeTravelAgencyContext _db;
 
-        public OrderRepository(TimeTravelAgencyContext db)
+        public OrderRepository(TimeTravelAgencyContext context) : base(context)
         {
-            _db = db;
-        }
-        public async Task Create(Order entity)
-        {
-            _db.Orders.Add(entity);
-            await _db.SaveChangesAsync();
-        }
-
-        public async Task Delete(Order entity)
-        {
-            _db.Orders.Remove(entity);
-            await _db.SaveChangesAsync();
-        }
-
-        public IQueryable<Order> GetAll()
-        {
-            return _db.Orders;
+            _db = context;
         }
 
         public async Task<Order> GetById(int id)
         {
             return await _db.Orders.FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-        public Task<Order> GetByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Order>> SelectAll()
-        {
-            return _db.Orders.ToListAsync();
         }
 
         public async Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId, StatusOrder status)
@@ -89,18 +63,5 @@ namespace TimeTravelAgency.DAL.Repositories
             return extendedOrders.AsEnumerable();
         }
 
-        public async Task<Order> Update(Order entity)
-        {
-            _db.Orders.Update(entity);
-            await _db.SaveChangesAsync();
-
-            return entity;
-        }
-
-        public async Task UpdateRange(IEnumerable<Order> values)
-        {
-            _db.UpdateRange(values);
-            await _db.SaveChangesAsync();
-        }
     }
 }

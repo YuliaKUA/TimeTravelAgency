@@ -15,9 +15,9 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class OrderService : IOrderService
     {
-        private readonly IBaseRepository<Order> _orderRepository;
+        private readonly IOrderRepository _orderRepository;
 
-        public OrderService(IBaseRepository<Order> orderRepository)
+        public OrderService(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
         }

@@ -18,9 +18,9 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class AccountService : IAccountService
     {
-        private readonly IBaseRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public AccountService(IBaseRepository<User> userRepository)
+        public AccountService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }

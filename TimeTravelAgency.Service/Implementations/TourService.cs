@@ -15,9 +15,9 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class TourService : ITourService
     {
-        private readonly IBaseRepository<Tour> _tourRepository;
+        private readonly ITourRepository _tourRepository;
 
-        public TourService(IBaseRepository<Tour> tourRepository)
+        public TourService(ITourRepository tourRepository)
         {
             _tourRepository = tourRepository;
         }

@@ -10,30 +10,13 @@ using TimeTravelAgency.Domain.Enum;
 
 namespace TimeTravelAgency.DAL.Repositories
 {
-    public class TourRepository : IBaseRepository<Tour>
+    public class TourRepository : BaseRepository<Tour>, ITourRepository
     {
         private readonly TimeTravelAgencyContext _db;
 
-        public TourRepository(TimeTravelAgencyContext db)
+        public TourRepository(TimeTravelAgencyContext context) : base(context)
         {
-            _db = db;
-        }
-
-        public async Task Create(Tour entity)
-        {
-            _db.Tours.Add(entity);
-            await _db.SaveChangesAsync();
-        }
-
-        public async Task Delete(Tour entity)
-        {
-            _db.Tours.Remove(entity);
-            await _db.SaveChangesAsync();
-        }
-
-        public IQueryable<Tour> GetAll()
-        {
-            return _db.Tours;
+            _db = context;
         }
 
         public async Task<Tour> GetById(int id)
@@ -46,32 +29,5 @@ namespace TimeTravelAgency.DAL.Repositories
             return await _db.Tours.FirstOrDefaultAsync(x => x.Title == name);
         }
 
-        public Task<List<Tour>> SelectAll()
-        {
-            return _db.Tours.ToListAsync();
-        }
-
-        public Task<IQueryable<ExtendedOrder>> SelectExtendedOrder(int userId, StatusOrder status)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Order>> SelectOrder(int userId, StatusOrder status)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Tour> Update(Tour entity)
-        {
-            _db.Tours.Update(entity);
-            await _db.SaveChangesAsync();
-
-            return entity;
-        }
-
-        public Task UpdateRange(IEnumerable<Tour> values)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
