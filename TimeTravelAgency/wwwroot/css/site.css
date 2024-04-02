@@ -1,18 +1,48 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    padding-top: 70px;
+}
+
+a.navbar-brand {
+    color: black;
+}
+
+.nav-link {
+    position: relative;
+}
+
+    .nav-link::after {
+        content: '';
+        opacity: 0;
+        transition: all 0.2s;
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .nav-link:hover::after {
+        opacity: 1;
+    }
+
+.navbar-brand img {
+    width: 1.5rem;
+    height: 1.5rem;
 }

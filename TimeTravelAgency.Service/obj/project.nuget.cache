@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6W/Hz9RB+yR7G+HVCvSgqvm6whi+eqPSZ/FqlylARz/6z4YMUSPMvMxUqGv+d4M6PilFPDa7j+juFBBXf1+VXQ==",
+  "dgSpecHash": "taw9YDdJypFe9sNBgy+s9pxjjPhYIt70gkjHQNxWbZbgIdMfWGUaPhBFLkCIb4IFyGcUEHlOPmDtAWspxSbUtw==",
   "success": true,
-  "projectFilePath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
+  "projectFilePath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

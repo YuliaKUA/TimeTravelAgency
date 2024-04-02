@@ -18,19 +18,20 @@
     else
     {
         <p>Привет, Пользователь!</p>
-        <a asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)" >Изменить профиль</a>
+        <a asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Изменить профиль</a>
     }
-     <form method="post" asp-controller="Account" asp-action="Logout">
-        <input  type="submit" value="Выход" />
-     </form>
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>
 
-     <form method="post" asp-controller="Cart" asp-action="GetCart" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">
-        <input  type="submit" value="Корзина" />
-     </form>
+    <form method="post" asp-controller="Cart" asp-action="GetCart" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">
+        <input type="submit" value="Корзина" />
+    </form>
 }
 else
 {
     <h2>Вы НЕ авторизованы!</h2>
+    
     <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
     <a asp-controller="Account" asp-action="Login">Войти</a>
 }

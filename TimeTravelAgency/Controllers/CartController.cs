@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TimeTravelAgency.Service.Interfaces;
 
 namespace TimeTravelAgency.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly IOrderService _orderService;

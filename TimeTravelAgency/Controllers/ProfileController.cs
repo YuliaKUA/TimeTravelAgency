@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using TimeTravelAgency.Domain.Entity;
 using TimeTravelAgency.Service.Implementations;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TimeTravelAgency.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly IProfileService _profileService;
