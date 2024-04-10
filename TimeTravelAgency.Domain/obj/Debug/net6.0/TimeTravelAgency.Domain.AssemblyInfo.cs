@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeTravelAgency.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acd494891788c006ab47b1e017c9805f7482c483")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+580955f9362ea1e9b16c5779fecaf596a02ad338")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeTravelAgency.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeTravelAgency.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

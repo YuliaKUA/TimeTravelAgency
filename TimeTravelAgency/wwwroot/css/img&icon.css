@@ -1,0 +1,73 @@
+﻿.no-mp {
+    margin: 0;
+    padding: 0;
+}
+
+.icon-size {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.container-welcome {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container-height-page {
+    height: 70vh;
+}
+
+.img-width-full {
+    width: 100%;
+}
+
+.img-content {
+    position: absolute;
+    object-fit: cover;
+}
+
+.text-welcome {
+    font-size: 5rem;
+}
+
+.carousel-item {
+    height: 70vh;
+}
+
+.carousel-img {
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+/* Text Transitions */
+.owl-carousel .item {
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateY(130px);
+    transform: translateY(130px);
+    -webkit-transition: all 0.3s linear 0.5s;
+    -moz-transition: all 0.3s linear 0.5s;
+    transition: all 0.3s linear 0.5s;
+}
+
+.owl-carousel .owl-item.active .item {
+    width: 400px;
+    height: 300px;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+item .img {
+    width: 100%;
+    height: 100%;
+}

@@ -3,34 +3,46 @@
     ViewBag.Title = "Изменить профиль";
     Layout = "_Layout";
 }
-<h2>Изменить профиль  «@User.Identity.Name»</h2>
-<form asp-action="EditProfile" asp-controller="Profile">
-    <div class="validation" asp-validation-summary="All"></div>
-    <p>
-        <label asp-for="FirstName"> Имя </label>
-        <input type="text" asp-for="FirstName" />
-    </p>
-    <p>
-        <label asp-for="LastName"> Фамилия </label>
-        <input type="text" asp-for="LastName" />
-    </p>
-    <p>
-        <label asp-for="Age"> Возраст </label>
-        <input type="number" asp-for="Age" />
-    </p>
-    <p>
-        <label asp-for="Email"> Email </label>
-        <input type="email" asp-for="Email" />
-    </p>
-    <p>
-        <label asp-for="Phone"> Телефон </label>
-        <input type="tel" asp-for="Phone" />
-    </p>
-    <p>
-        <label asp-for="Uaddress"> Адрес </label>
-        <input type="text" asp-for="Uaddress" />
-    </p>
-    <p>
-        <input type="submit" value="Отправить" />
-    </p>
-</form>
+
+<div class="container">
+    <div class="row col-md-8 offset-md-2">
+        <form asp-action="EditProfile" asp-controller="Profile" class="form-wh-radius py-4">
+            <div class="d-flex justify-content-center m-4">
+                <h3>Изменить профиль</h3>
+            </div>
+            <div class="row g-3 m-3">
+                <div class="col">
+                    <label asp-for="FirstName"> Имя </label>
+                    <input type="text" asp-for="FirstName" class="form-control" />
+                </div>
+                <div class="col">
+                    <label asp-for="LastName"> Фамилия </label>
+                    <input type="text" asp-for="LastName" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 m-3">
+                <div class="col">
+                    <label asp-for="Email"> Email </label>
+                    <input type="email" asp-for="Email" class="form-control" />
+                </div>
+                <div class="col">
+                    <label asp-for="Phone"> Телефон </label>
+                    <input type="tel" asp-for="Phone" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 m-3">
+                <div class="col-3">
+                    <label asp-for="Age"> Возраст </label>
+                    <input type="number" asp-for="Age" class="form-control" />
+                </div>
+                <div class="col-9">
+                    <label asp-for="Uaddress"> Адрес </label>
+                    <input type="text" asp-for="Uaddress" class="form-control" />
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn btn-outline-dark col-4 m-4" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -14,19 +14,21 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
-    padding-top: 70px;
+    margin-bottom: 50vh;
+    padding-top: 60px;
+    background-color: #F8F9FA;
 }
 
+/*navbar*/
 a.navbar-brand {
     color: black;
 }
 
-.nav-link {
+.underline-nav-link {
     position: relative;
 }
 
-    .nav-link::after {
+    .underline-nav-link::after {
         content: '';
         opacity: 0;
         transition: all 0.2s;
@@ -38,11 +40,27 @@ a.navbar-brand {
         left: 0;
     }
 
-    .nav-link:hover::after {
+    .underline-nav-link:hover::after {
         opacity: 1;
     }
 
-.navbar-brand img {
-    width: 1.5rem;
-    height: 1.5rem;
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.no-back-border {
+    background: none;
+    border: none;
+}
+
+/*Login & Register form*/
+.form-wh-radius {
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*Footer*/
+.fs-small {
+    font-size: small;
 }

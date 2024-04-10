@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Project\\net\\TimeTravelAgency\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\views\\cart\\getcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\views\\cart\\getcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\views\\tour\\gettours.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\views\\tour\\gettours.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\wwwroot\\css\\img\u0026icon.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\wwwroot\\css\\img\u0026icon.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|c:\\project\\net\\timetravelagency\\timetravelagency\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5897E18C-59D2-4F32-AC82-615061FD0617}|TimeTravelAgency\\TimeTravelAgency.csproj|solutionrelative:timetravelagency\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,19 +38,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 193,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e9d26e9f-2060-4aa2-bec3-2a9e07c66900}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "img\u0026icon.css",
+              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\img\u0026icon.css",
+              "RelativeDocumentMoniker": "TimeTravelAgency\\wwwroot\\css\\img\u0026icon.css",
+              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\img\u0026icon.css",
+              "RelativeToolTip": "TimeTravelAgency\\wwwroot\\css\\img\u0026icon.css",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAABAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-10T01:05:33.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "TimeTravelAgency\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "TimeTravelAgency\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-10T01:05:25.363Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "TimeTravelAgency\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "TimeTravelAgency\\Views\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "GetCart.cshtml",
+              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Cart\\GetCart.cshtml",
+              "RelativeDocumentMoniker": "TimeTravelAgency\\Views\\Cart\\GetCart.cshtml",
+              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Cart\\GetCart.cshtml",
+              "RelativeToolTip": "TimeTravelAgency\\Views\\Cart\\GetCart.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-02T22:50:28.363Z",
+              "WhenOpened": "2024-04-10T00:34:20.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-10T00:12:50.585Z",
               "EditorCaption": ""
             },
             {
@@ -53,59 +104,36 @@
               "RelativeDocumentMoniker": "TimeTravelAgency\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "TimeTravelAgency\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAkAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-02T15:08:56.298Z",
+              "WhenOpened": "2024-04-10T00:12:12.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "TimeTravelAgency\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "TimeTravelAgency\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAIwBkAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T15:07:51.534Z",
+              "DocumentIndex": 6,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "TimeTravelAgency\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "TimeTravelAgency\\wwwroot\\js\\site.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-10T00:10:45.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "TimeTravelAgency\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAlAAAA",
+              "Title": "GetTours.cshtml",
+              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Tour\\GetTours.cshtml",
+              "RelativeDocumentMoniker": "TimeTravelAgency\\Views\\Tour\\GetTours.cshtml",
+              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\Views\\Tour\\GetTours.cshtml",
+              "RelativeToolTip": "TimeTravelAgency\\Views\\Tour\\GetTours.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAoAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-02T14:45:18.194Z",
+              "WhenOpened": "2024-04-10T00:10:33.527Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "TimeTravelAgency\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "TimeTravelAgency\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-28T16:50:42.249Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 193,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e9d26e9f-2060-4aa2-bec3-2a9e07c66900}"
             }
           ]
         }

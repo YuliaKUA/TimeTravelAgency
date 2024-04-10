@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\TimeTravelAgency.bundle.scp.css"
     },
     {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\img&icon.css",
+      "PackagePath": "staticwebassets\\css\\img&icon.css"
+    },
+    {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -13,16 +17,64 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\login_icon.png",
-      "PackagePath": "staticwebassets\\images\\login_icon.png"
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\GetTours\\1.jpg"
     },
     {
-      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\search_icon.png",
-      "PackagePath": "staticwebassets\\images\\search_icon.png"
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\GetTours\\2.jpg"
     },
     {
-      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\shop_cart_icon.png",
-      "PackagePath": "staticwebassets\\images\\shop_cart_icon.png"
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\GetTours\\3.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\GetTours\\4.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\5.jpg",
+      "PackagePath": "staticwebassets\\images\\GetTours\\5.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\carousel\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\Index\\carousel\\1.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\carousel\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\Index\\carousel\\2.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\carousel\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\Index\\carousel\\3.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\welcome.jpg",
+      "PackagePath": "staticwebassets\\images\\Index\\welcome.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\TravelGuide\\1.webp",
+      "PackagePath": "staticwebassets\\images\\TravelGuide\\1.webp"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\icon\\account_icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\account_icon.png"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\icon\\login_icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\login_icon.png"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\icon\\logo_icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\logo_icon.png"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\icon\\search_icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\search_icon.png"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\icon\\shop_cart_icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\shop_cart_icon.png"
     },
     {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\js\\site.js",

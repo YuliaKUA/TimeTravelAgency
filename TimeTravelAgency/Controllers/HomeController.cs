@@ -17,6 +17,10 @@ namespace TimeTravelAgency.Controllers
         {
             return View();
         }
+        public IActionResult Privacy()
+        {
+            return PartialView();
+        }
 
         public IActionResult About()
         {

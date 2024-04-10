@@ -7,20 +7,43 @@
     ViewBag.Title = "Корзина";
     Layout = "_Layout";
 }
-<h2>Корзина</h2>
 
-@if (Model != null)
-{
-    @foreach (var order in Model)
-    {
-        <div>
-            <h3>@order.Title</h3>
-            <p>@order.DateStart - @order.DateEnd</p>
-            <p>@order.DateCreate</p>
-            <p>@EnumExtensions.GetDisplayName(order.Status)</p>
-            <a asp-controller="Cart" asp-action="DeleteTourFromCart" asp-route-id="@order.Id" >Удалить</a>
+<div class="container-fluid no-mp">
+    <div class="col-10 offset-1 pt-3">
+        <div class="container-fluid text-center">
+            <h2>Корзина</h2>
         </div>
-    }
 
-<a asp-controller="Order" asp-action="CreateOrder" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)" >Оплатить заказ</a>
-}
+        @if (Model != null)
+        {
+            @foreach (var order in Model)
+            {
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4 container" style="height: 13rem; overflow: hidden;display: flex;align-items: center;">
+                            <img src="/images/GetTours/1.jpg" class="img-fluid rounded-start" style="width:100%" alt="...">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="card-body">
+                                <h4 class="card-title">@order.Title</h4>
+                                <p>Даты проведения: @order.DateStart - @order.DateEnd</p>
+                                @* <p>@order.DateCreate</p>
+                        <p>@EnumExtensions.GetDisplayName(order.Status)</p> *@
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+
+                            <a class="btn btn-outline-dark ms-2" asp-controller="Cart" asp-action="DeleteTourFromCart" asp-route-id="@order.Id">Удалить</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+            <a class="btn btn-dark my-2" asp-controller="Order" asp-action="CreateOrder" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Оплатить заказ</a>
+        }
+
+    </div>
+</div>

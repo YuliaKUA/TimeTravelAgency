@@ -30,7 +30,7 @@ namespace TimeTravelAgency.Controllers
         [Authorize(Roles = "Admin, Moderator")]
         public async Task<IActionResult> CreateTour()
         {
-            return View();
+            return PartialView();
         }
         [Authorize(Roles = "Admin, Moderator")]
         [HttpPost]
@@ -52,7 +52,7 @@ namespace TimeTravelAgency.Controllers
             var response = await _tourService.GetTourById(id);
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
-                return View(response.Data);
+                return PartialView(response.Data);
             }
 
             return RedirectToAction("Error");

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,16 +7,18 @@
     <title>@ViewData["Title"] - TimeTravelAgency</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/account.css" />
+    <link rel="stylesheet" href="~/css/img&icon.css" />
     <link rel="stylesheet" href="~/TimeTravelAgency.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-toggleable-md fixed-top" style="background-color: white">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-md fixed-top border-bottom" style="background-color: white">
             <div class="container-fluid d-flex flex-nowrap justify-content-between mx-5">
 
                 <div>
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="@Url.Content("~/images/search_icon.png")" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <a class="navbar-brand icon-size" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="@Url.Content("~/images/icon/logo_icon.png")" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                         ChronoVoyage
                     </a>
                 </div>
@@ -29,16 +32,16 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
+                                    <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TravelGuide">Путеводитель</a>
+                                    <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TravelGuide">Путеводитель</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Tour" asp-action="GetTours">Туры</a>
+                                    <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Tour" asp-action="GetTours">Туры</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">О нас</a>
+                                    <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">О нас</a>
                                 </li>
                             </ul>
                         </div>
@@ -46,17 +49,48 @@
                 </div>
 
 
-                <div class="d-inline-flex flex-nowrap">
+                <div class="d-inline-flex align-items-center flex-nowrap">
                     <div>
-                        <a class="navbar-brand" href="/"><img src="@Url.Content("~/images/search_icon.png")" alt="search" /></a>
-                    </div>
-                    <div>
-                        <a class="navbar-brand" href="/"><img src="@Url.Content("~/images/shop_cart_icon.png")" alt="cart" /></a>
-                    </div>
-                    <div>
-                        <a class="navbar-brand" href="/"><img src="@Url.Content("~/images/login_icon.png")" alt="login" /></a>
+                        <a class="navbar-brand" href="/"><img class="icon-size" src="@Url.Content("~/images/icon/search_icon.png")" alt="search" /></a>
                     </div>
 
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Cart" asp-action="GetCart" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">
+                            <input type="image" class="icon-size mt-2" src="@Url.Content("~/images/icon/shop_cart_icon.png")" alt="cart" />
+                        </form>
+
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="icon-size m-0" src="@Url.Content("~/images/icon/account_icon.png")" alt="login" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Изменить профиль</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form class="dropdown-item" method="post" asp-controller="Account" asp-action="Logout">
+                                        <input class="no-back-border" type="submit" value="Выход" />
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+
+                    else
+                    {
+                        <div>
+                            <a class="navbar-brand me-3" href="/"><img class="icon-size" src="@Url.Content("~/images/icon/shop_cart_icon.png")" alt="cart" /></a>
+                        </div>
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle px-0 pt-2 pb-1" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="icon-size m-0" src="@Url.Content("~/images/icon/login_icon.png")" alt="login" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Login">Войти</a></li>
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Register">Зарегистрироваться</a></li>
+                            </ul>
+                        </div>
+                    }
 
                 </div>
 
@@ -68,15 +102,70 @@
         </nav>
 
     </header>
-    <div class="container">
+    <div class="container-fluid no-mp">
         <main role="main" class="pb-3">
             @RenderBody()
+            @* <div class="container" style="height:50vh"></div> *@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-white pt-5 pb-2">
         <div class="container">
-            &copy; 2024 - ChronoVoyage - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="container-fluid text-center">
+                <h4>ChronoVoyage</h4>
+            </div>
+            <div class="py-2">
+                <div class="row justify-content-between">
+                    <div class="col-4">
+                        <h5 class="pb-4">ПРИСОЕДИНЯЙТЕСЬ К СЕМЬЕ</h5>
+                        <div class="text-wrap" style="line-height:2">
+                            <p>
+                                Подпишитесь, чтобы получить ранний доступ к нашим эксклюзивным предложениям, таким как будущие продажи архивов,
+                                только для подписчиков
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="container text-wrap">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="col">
+                                        <p>ОБЩЕЕ</p>
+                                    </div>
+                                    <div class="col pb-3 fs-small" style="line-height:2">
+                                        <a class="text-decoration-none link-dark" style="color:black" href="#">СВЯЗАТЬСЯ С НАМИ</a>
+                                    </div>
+                                    <div class="col fs-small">
+                                        <a class="text-decoration-none link-dark" asp-controller="Home" asp-action="About">О НАС</a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="col">
+                                        ПОДДЕРЖКА
+                                    </div>
+                                    <div class="col py-3 fs-small" style="line-height:2">
+                                        <a class="text-decoration-none link-dark" style="color:black" href="#">ВОПРОСЫ И ВОЗВРАТЫ</a>
+                                    </div>
+                                    <div class="col fs-small" style="line-height:2">
+                                        <a class="text-decoration-none link-dark" asp-controller="Home" asp-action="Privacy">ПОЛИТИКА КОНФЕДЕНЦИАЛЬНОСТИ</a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="col">
+                                        СОЦ СЕТИ
+                                    </div>
+                                    <div class="col fs-small">
+                                        <a class="text-decoration-none link-dark" style="color:black" href="#">ВКОНТАКТЕ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid text-center">
+                &copy; 2024 ChronoVoyage
+            </div>
         </div>
     </footer>
 

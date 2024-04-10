@@ -31,7 +31,73 @@
 else
 {
     <h2>Вы НЕ авторизованы!</h2>
-    
+
     <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
     <a asp-controller="Account" asp-action="Login">Войти</a>
 }
+
+<div class="container-fluid container-welcome container-height-page no-mp">
+    <img class="img-fluid img-width-full" src="~/images/index/welcome.jpg" alt="welcome">
+    <div class="img-content">
+        <p class="text-white text-welcome">ChronoVoyage</p>
+    </div>
+</div>
+
+<div class="container-fluid no-mp bg-white">
+    <div class="row align-items-center container-height-page py-5">
+
+        <div class="row justify-content-evenly py-4 h-100">
+            <div class="col-4 align-self-center">
+                <div class="row">
+                    <h2 class="p-3">FGH ty TSYhUD e GEY</h2>
+                    <div class="row justify-content-end">
+                        <div class="col-6">
+                            <p class="text-end">Ybgyh ewj sYuoeifjwsyg 7i8fouieodso p[juytrgk feju hu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 h-100">
+                <div class="container h-100 overflow-hidden" style="height: 50vh">
+                    <img class="img h-100" src="~/images/index/welcome.jpg" alt="welcome">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid no-mp bg-white">
+    <div class="row align-items-center container-height-page">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" @* data-bs-interval="false" *@>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid carousel-img no-mp">
+                        <img src="/images/Index/carousel/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid carousel-img no-mp">
+                        <img src="/images/Index/carousel/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid carousel-img no-mp">
+                        <img src="/images/Index/carousel/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
