@@ -1,5 +1,4 @@
-﻿
-(function () {
+﻿function () {
     'use strict'
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -17,11 +16,12 @@
                 form.classList.add('was-validated')
             }, false)
         })
-})()
+}
 
-const myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
 
-var myCarousel = document.getElementById('myCarousel')
-myCarousel.addEventListener('slide.bs.carousel', function () {
-    // do something...
-})
+//const myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
+
+//var myCarousel = document.getElementById('myCarousel')
+//myCarousel.addEventListener('slide.bs.carousel', function () {
+// do something...
+//})

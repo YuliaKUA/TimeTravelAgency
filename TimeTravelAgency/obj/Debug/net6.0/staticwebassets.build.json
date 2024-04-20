@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zBdkFeTATf0N69lutJQ2glMUYoDp+AdnmQ44duhI6Bo=",
+  "Hash": "kWbowvxsWQUYiB/evppefWpgs6aM50dDtqvqdJxTvxQ=",
   "Source": "TimeTravelAgency",
   "BasePath": "_content/TimeTravelAgency",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TimeTravelAgency.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\carousel.css",
+      "SourceId": "TimeTravelAgency",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\",
+      "BasePath": "_content/TimeTravelAgency",
+      "RelativePath": "css/carousel.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\carousel.css"
     },
     {
       "Identity": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\img&icon.css",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\fonts\\Lora-Regular.ttf",
+      "SourceId": "TimeTravelAgency",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\",
+      "BasePath": "_content/TimeTravelAgency",
+      "RelativePath": "fonts/Lora-Regular.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\Lora-Regular.ttf"
     },
     {
       "Identity": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\1.jpg",
@@ -357,6 +395,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Index\\carousel\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\slogan.jpg",
+      "SourceId": "TimeTravelAgency",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\",
+      "BasePath": "_content/TimeTravelAgency",
+      "RelativePath": "images/Index/slogan.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Index\\slogan.jpg"
     },
     {
       "Identity": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\welcome.jpg",

@@ -1,8 +1,75 @@
 ﻿@model TimeTravelAgency.Domain.Entity.Tour
 
+@* <script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script> *@
 
 <div class="container">
-    <form asp-action="CreateTour" asp-controller="Tour">
+    <form asp-action="CreateTour" asp-controller="Tour" enctype="multipart/form-data" class="needs-validation CreateTourForm" id="CreateTourForm">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div class="row mx-3 mb-3">
+            <div class="col-4">
+                <label asp-for="TypeTour">Тип тура</label><br />
+                <select class="form-select" asp-for="TypeTour" asp-items="Html.GetEnumSelectList<TimeTravelAgency.Domain.Enum.TypeTour>()">
+                </select>
+            </div>
+            <div class="col-8">
+                <label asp-for="Title">Название: </label>
+                <input type="text" asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title"></span>
+            </div>
+        </div>
+        <div class="row mx-3 mb-3">
+            <div class="col">
+                <label asp-for="DateStart">Дата начала: </label>
+                <input type="date" asp-for="DateStart" class="form-control" />
+                <span asp-validation-for="DateStart"></span>
+            </div>
+            <div class="col">
+                <label asp-for="DateEnd">Дата окончания: </label>
+                <input type="date" asp-for="DateEnd" class="form-control" />
+                <span asp-validation-for="DateEnd"></span>
+            </div>
+        </div>
+        <div class="row mx-3 mb-3 px-2">
+            <label asp-for="Descriptions">Описание: </label>
+            <textarea class="form-control" rows="5" asp-for="Descriptions"></textarea>
+            <span asp-validation-for="Descriptions"></span>
+        </div>
+        <div class="row mx-3 mb-3">
+            <div class="col">
+                <label asp-for="Price">Цена: </label>
+                <div class="input-group mb-3">
+                    <input type="number" asp-for="Price" class="form-control" />
+                    <span class="input-group-text">₽</span>
+                </div>
+            </div>
+            <div class="col">
+                <label asp-for="NumberOfPlaces">Количество мест: </label>
+                <input type="number" asp-for="NumberOfPlaces" class="form-control" />
+            </div>
+        </div>
+        <div class="row mx-3 mb-3">
+            <div class="col">
+                <label>Главное изображение: </label>
+                <input name="uploadImage" type="file" class="form-control" />
+            </div>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+            <button id="btnCreate" class="btn btn-outline-dark col-4" type="submit">Добавить</button>
+        </div>
+    </form>
+
+</div>
+
+
+
+
+@* <div class="container">
+    <form asp-action="CreateTour" asp-controller="Tour" class=" needs-validation" novalidate>
         <div class="row mx-3 mb-3">
             <div class="col-4">
                 <label asp-for="TypeTour">Тип тура</label><br />
@@ -41,10 +108,20 @@
                 <input type="number" asp-for="NumberOfPlaces" class="form-control" />
             </div>
         </div>
+        <div class="row mx-3 mb-3">
+            <div class="col">
+                <label asp-for="PicTitle">PicTitle: </label>
+                <input type="text" asp-for="PicTitle" class="form-control" required />
+                <span asp-validation-for="PicTitle"></span>
+            </div>
+            <div class="col">
+                <input name="uploadImage" type="file" class="form-control" />
+            </div>
+        </div>
 
         <div class="modal-footer justify-content-center">
             <button class="btn btn-outline-dark col-4" type="submit">Добавить</button>
         </div>
     </form>
 
-</div>
+</div> *@

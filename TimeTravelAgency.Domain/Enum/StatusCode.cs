@@ -11,6 +11,7 @@ namespace TimeTravelAgency.Domain.Enum
         UserNotFound = 0,
         ObjectNotFound = 10,
         CartIsEmpty = 11,
+        ObjectAlreadyExist = 12,
         OK = 200,
         LoginAlreadyUse = 365,
         NotFound = 404,

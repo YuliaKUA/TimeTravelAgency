@@ -3,7 +3,7 @@
 
 <div class="container">
 
-    <form asp-action="UpdateTour" asp-controller="Tour">
+    <form asp-action="UpdateTour" asp-controller="Tour" enctype="multipart/form-data" class="needs-validation">
         <div class="row mx-3 mb-3">
             <div class="col-4">
                 <label asp-for="TypeTour">Тип тура</label><br />
@@ -13,21 +13,24 @@
             <div class="col-8">
                 <label asp-for="Title">Новое название: </label>
                 <input type="text" asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title"></span>
             </div>
         </div>
         <div class="row mx-3 mb-3">
             <div class="col">
                 <label asp-for="DateStart">Новая дата начала: </label>
                 <input type="date" asp-for="DateStart" class="form-control" />
+                <span asp-validation-for="DateStart"></span>
             </div>
             <div class="col">
                 <label asp-for="DateEnd">Новая дата окончания: </label>
                 <input type="date" asp-for="DateEnd" class="form-control" />
+                <span asp-validation-for="DateEnd"></span>
             </div>
         </div>
         <div class="row mx-3 mb-3 px-2">
             <label asp-for="Descriptions">Новое описание: </label>
-            <textarea class="form-control" rows="7" asp-for="Descriptions"></textarea>
+            <textarea class="form-control" rows="5" asp-for="Descriptions"></textarea>
         </div>
         <div class="row mx-3 mb-3">
             <div class="col">
@@ -42,9 +45,15 @@
                 <input type="number" asp-for="NumberOfPlaces" class="form-control" />
             </div>
         </div>
+        <div class="row mx-3 mb-3">
+            <div class="col">
+                <label>Новое главное изображение: </label>
+                <input name="uploadImage" type="file" class="form-control" />
+            </div>
+        </div>
 
         <div class="modal-footer justify-content-center">
-            <button class="btn btn-outline-dark col-4" type="submit">Изменить</button>
+            <button class="btn btn-outline-dark col-4" id="btnUpdate" type="submit">Изменить</button>
         </div>
     </form>
 

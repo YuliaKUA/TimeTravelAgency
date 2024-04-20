@@ -28,7 +28,7 @@ namespace TimeTravelAgency.Controllers
                 return View(response.Data);
             }
 
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Shared");
         }
         [HttpPost]
         public async Task<IActionResult> EditProfile(int id, ProfileViewModel model)
@@ -52,7 +52,7 @@ namespace TimeTravelAgency.Controllers
                 }
 
             }
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Shared");
         }
     }
 }

@@ -24,6 +24,7 @@ namespace TimeTravelAgency.DAL
         public virtual DbSet<Tour> Tours { get; set; } = null!;
         public virtual DbSet<Uprofile> Uprofiles { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Picture> Pictures { get; set; } = null!;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

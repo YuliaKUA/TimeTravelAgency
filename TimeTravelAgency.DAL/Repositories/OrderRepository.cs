@@ -48,19 +48,19 @@ namespace TimeTravelAgency.DAL.Repositories
 
         public async Task<IEnumerable<Order>> SelectOrder(int userId, StatusOrder status)
         {
-            var extendedOrders = await (from o in _db.Orders
-                                        where o.UserId == userId && o.Status == status
-                                        select new Order
-                                        {
-                                            Id = o.Id,
-                                            TourId = o.TourId,
-                                            UserId = o.UserId,
-                                            DateCreate = o.DateCreate,
-                                            Status = o.Status,
-                                            Number = o.Number,
-                                        }).ToListAsync();
+            var orders = await (from o in _db.Orders
+                                where o.UserId == userId && o.Status == status
+                                select new Order
+                                {
+                                    Id = o.Id,
+                                    TourId = o.TourId,
+                                    UserId = o.UserId,
+                                    DateCreate = o.DateCreate,
+                                    Status = o.Status,
+                                    Number = o.Number,
+                                }).ToListAsync();
 
-            return extendedOrders.AsEnumerable();
+            return orders.AsEnumerable();
         }
 
     }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TimeTravelAgency.Domain.Entity;
+using TimeTravelAgency.Domain.Enum;
+using TimeTravelAgency.Domain.ViewModels.Account;
 
 namespace TimeTravelAgency.DAL.Interfaces
 {
@@ -11,5 +13,6 @@ namespace TimeTravelAgency.DAL.Interfaces
     {
         Task<User> GetById(int id);
         Task<User> GetByName(string name);
+        Task<List<AccountViewModel>> SelectFullAccount(int id);
     }
 }

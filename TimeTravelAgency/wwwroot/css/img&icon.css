@@ -8,6 +8,7 @@
     height: 1.5rem;
 }
 
+/*welcome page (index)*/
 .container-welcome {
     width: 100%;
     overflow: hidden;
@@ -30,11 +31,38 @@
     object-fit: cover;
 }
 
+
+@font-face {
+    font-family: 'lora-regular';
+    src: url('../fonts/lora-regular.ttf') format('truetype');
+}
+
 .text-welcome {
+    font-family: lora-regular;
     font-size: 5rem;
 }
 
-.carousel-item {
+/*parallax*/
+.mouse-parallax {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.mouse-parallax-bg {
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    transition: all 0.1s ease;
+    background-image: url("../images/Index/welcome.jpg");
+}
+
+
+/*carousel index*/
+.carousel-item-index {
     height: 70vh;
 }
 
@@ -48,23 +76,14 @@
     position: relative;
 }
 
-
-/* Text Transitions */
-.owl-carousel .item {
-    width: 100px;
-    height: 100px;
-    -webkit-transform: translateY(130px);
-    transform: translateY(130px);
-    -webkit-transition: all 0.3s linear 0.5s;
-    -moz-transition: all 0.3s linear 0.5s;
-    transition: all 0.3s linear 0.5s;
-}
-
-.owl-carousel .owl-item.active .item {
-    width: 400px;
-    height: 300px;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
+.carousel-img-nav {
+    height: 13vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 item .img {

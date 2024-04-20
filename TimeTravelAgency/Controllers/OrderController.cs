@@ -33,7 +33,7 @@ namespace TimeTravelAgency.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Shared");
         }
 
         public async Task<IActionResult> CreateOrder(int userId)
@@ -43,7 +43,7 @@ namespace TimeTravelAgency.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Shared");
         }
 
     }

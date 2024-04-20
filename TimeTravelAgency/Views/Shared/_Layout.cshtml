@@ -7,7 +7,6 @@
     <title>@ViewData["Title"] - TimeTravelAgency</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/account.css" />
     <link rel="stylesheet" href="~/css/img&icon.css" />
     <link rel="stylesheet" href="~/TimeTravelAgency.styles.css" asp-append-version="true" />
 </head>
@@ -41,8 +40,16 @@
                                     <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Tour" asp-action="GetTours">Туры</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">О нас</a>
+                                    <a class="nav-link underline-nav-link text-dark text-nowrap" asp-area="" asp-controller="Home" asp-action="About">О нас</a>
                                 </li>
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                {
+
+                                    <li class="nav-item">
+                                        <a class="nav-link underline-nav-link text-dark" asp-area="" asp-controller="Account" asp-action="GetUsers">Управление аккаунтами</a>
+                                    </li>
+
+                                }
                             </ul>
                         </div>
                     </div>
@@ -105,7 +112,7 @@
     <div class="container-fluid no-mp">
         <main role="main" class="pb-3">
             @RenderBody()
-            @* <div class="container" style="height:50vh"></div> *@
+            <div class="container" style="height:50vh"></div>
         </main>
     </div>
 

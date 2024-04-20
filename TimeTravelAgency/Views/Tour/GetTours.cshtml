@@ -1,6 +1,7 @@
 ﻿@using TimeTravelAgency.Domain.Entity
 @using TimeTravelAgency.Domain.Enum
-@model List<TimeTravelAgency.Domain.Entity.Tour>
+@using System.Web.Optimization
+@model TimeTravelAgency.Domain.ViewModels.TourViewModels.ToursWithPicturesViewModel
 
 @{
     ViewBag.Title = "Список туров";
@@ -34,6 +35,9 @@
                     <div class="modal-body">
                         <div class="mx-4" id="CreateTourModalBody">
                             @* insert content *@
+                            @{
+                                Html.RenderPartial("~/Views/Tour/CreateTour.cshtml", new Tour());
+                            }
                         </div>
                     </div>
                 </div>
@@ -41,56 +45,72 @@
         </div>
 
 
-        @foreach (var tour in Model)
+        @foreach (var tour in Model.tours)
         {
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <div class="container-fluid"></div>
-                        <img src=@string.Format("/images/GetTours/{0}.jpg", @tour.Id) class="img-fluid rounded-start" alt="...">
+                        <div class="container-fluid">
+                            @if (Model.pictures.ContainsKey(string.Format("{0}-main", tour.Id)) && Model.pictures[string.Format("{0}-main", tour.Id)].Image != null)
+
+                            {
+                                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.pictures[string.Format("{0}-main", tour.Id)].Image))" class="img-fluid rounded-start" />
+                            }
+                            else
+                            {
+                                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.pictures["not-found"].Image))" class="img-fluid rounded-start" />
+                            }
+                        </div>
+                        @* <img src=@string.Format("/images/GetTours/{0}.jpg", @tour.Id) class="img-fluid rounded-start" alt="..."> *@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h3>@tour.Title</h3>
-                            <p>@EnumExtensions.GetDisplayName(tour.TypeTour)</p>
-                            <p>@tour.DateStart - @tour.DateEnd</p>
-                            <p>@tour.Descriptions</p>
-                            <p>Цена: @tour.Price ₽</p>
-                            <p>Количество мест: @tour.NumberOfPlaces</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row">
-                                    @if (User.Identity.IsAuthenticated)
-                                    {
-                                        @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
-                                        {
-                                            <a class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#UpdateTourModal" id="UpdateTourLink" asp-controller="Tour" asp-action="UpdateTour" asp-route-id="@tour.Id">Изменить</a>
-
-                                            <div class="myModal modal fade" id="UpdateTourModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Изменить тур</h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="mx-4" id="UpdateTourModalBody">
-                                                                @* insert content *@
+                            <div class="d-flex flex-column">
+                                <div>
+                                    <h3>@tour.Title</h3>
+                                    <p>@EnumExtensions.GetDisplayName(tour.TypeTour)</p>
+                                    <p>@($"{tour.DateStart.ToString("D")}") - @($"{tour.DateEnd.ToString("D")}")</p>
+                                    <p>@tour.Descriptions</p>
+                                    <p>Цена: @tour.Price ₽</p>
+                                    <p>Количество мест: @tour.NumberOfPlaces</p>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row">
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                                                {
+                                                    <div class="myModal modal fade" id="@string.Format("UpdateTourModal{0}", tour.Id)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Изменить тур</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="mx-4 js-modal-body" data-modal="@tour.Id" id="@string.Format("UpdateTourModalBody{0}", tour.Id)">
+                                                                        @* insert content *@
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
+                                                    <div class="mt-auto">
+                                                        <a class="btn btn-outline-dark me-2 js-open-modal" data-modal="@tour.Id" data-bs-toggle="modal" data-bs-target="@string.Format("#UpdateTourModal{0}", tour.Id)" id="@string.Format("UpdateTourLink{0}", tour.Id)" asp-controller="Tour" asp-action="UpdateTour" asp-route-id="@tour.Id">Изменить</a>
+                                                        <a class="btn btn-outline-dark" asp-controller="Tour" asp-action="DeleteTour" asp-route-id="@tour.Id">Удалить</a>
+                                                    </div>
 
-                                            <a class="btn btn-outline-dark" asp-controller="Tour" asp-action="DeleteTour" asp-route-id="@tour.Id">Удалить</a>
-                                        }
-                                    }
 
-                                </div>
-                                <div>
-                                    <a class="btn btn-dark" asp-controller="Tour" asp-action="TourInfo" asp-route-id="@tour.Id">Подробнее</a><br>
+                                                }
+                                            }
+                                        </div>
+                                        <div class="mt-auto">
+                                            <a class="btn btn-dark" asp-controller="Tour" asp-action="TourInfo" asp-route-id="@tour.Id">Подробнее</a><br>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -102,25 +122,79 @@
 
 @section scripts
 {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script> *@
+    @* <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /> *@
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
     <script type="text/javascript">
 
-        $(document).ready(function () {
-            $('#CreateTourLink').click(function (event) {
-                event.preventDefault();
-                var url = $(this).attr('href');
-                $('#CreateTourModalBody').load(url);
-            });
+        // $(document).on('click', '#CreateTourLink', function () {
+        //     $.ajax({
+        //         url: 'TourController/CreateTour',
+        //         type: 'POST',
+        //         success: function (response) {
+        //             $("#CreateTourModalBody").html(response);
+        //             $("#CreateTourModal").modal("show");
+        //         }
+        //     });
+        // });
+
+
+
+        // validation in development
+        $(document).on('click', '#btnCreate', function () {
+            if (!$('form').valid()) {
+                $("#CreateTourModal").modal("show");
+                return false;
+            }
         });
+
+
+        //modal
+        // $(document).ready(function () {
+        //     $('#CreateTourLink').click(function (event) {
+        //         event.preventDefault();
+        //         var url = $(this).attr('href');
+        //         $('#CreateTourModalBody').load(url);
+        //     });
+        // });
+
     </script>
 
     <script type="text/javascript">
+        // -- update tour --
+
+        // $(document).ready(function () {
+        //     $('#UpdateTourLink').click(function (event) {
+        //         event.preventDefault();
+        //         var url = $(this).attr('href');
+        //         $('#UpdateTourModalBody').load(url);
+        //     });
+        // });
 
         $(document).ready(function () {
-            $('#UpdateTourLink').click(function (event) {
-                event.preventDefault();
-                var url = $(this).attr('href');
-                $('#UpdateTourModalBody').load(url);
-            });
-        });
+
+            var modalButtons = document.querySelectorAll('.js-open-modal');
+
+            modalButtons.forEach(function (item) {
+
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    var modalId = this.getAttribute('data-modal'),
+                        modalElem = document.querySelector('.js-modal-body[data-modal="' + modalId + '"]'),
+                        modal = document.querySelector('.modal[id="UpdateTourModal' + modalId + '"]');
+
+                    var url = $(this).attr('href');
+                    $(modalElem).load(url);
+                });// end click
+            }); // end foreach
+        }); // end ready
+
+
     </script>
 }

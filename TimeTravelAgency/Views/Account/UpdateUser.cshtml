@@ -1,0 +1,64 @@
+﻿@model TimeTravelAgency.Domain.ViewModels.Account.AccountViewModel
+
+<div class="container-fluid no-mp">
+    <div class="row justify-content-center">
+        <div class="col-8 my-5">
+            <form asp-action="UpdateUser" asp-controller="Account" class="form-wh-radius needs-validation py-4">
+                <div class="row mx-3 mb-3">
+                    <div class="col-6">
+                        <label asp-for="URole">Роль пользователя</label><br />
+                        <select class="form-select" asp-for="URole" asp-items="Html.GetEnumSelectList<TimeTravelAgency.Domain.Enum.Role>()">
+                        </select>
+                    </div>
+                </div>
+                <div class="row mx-3 mb-3">
+                    <div class="col-6">
+                        <label asp-for="ULogin">Новый логин</label><br />
+                        <input type="text" asp-for="ULogin" class="form-control">
+                        <span asp-validation-for="ULogin"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="HashPassword">Новый пароль: </label>
+                        <input type="text" asp-for="HashPassword" class="form-control" />
+                        <span asp-validation-for="HashPassword"></span>
+                    </div>
+                </div>
+                <div class="row mx-3 mb-3">
+                    <div class="col-6">
+                        <label asp-for="FirstName">Новое имя</label><br />
+                        <input type="text" asp-for="FirstName" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="LastName">Новая фамилия: </label>
+                        <input type="text" asp-for="LastName" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mx-3 mb-3">
+                    <div class="col-6">
+                        <label asp-for="Age">Новый возраст</label><br />
+                        <input type="number" asp-for="Age" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Email">Новая почта: </label>
+                        <input type="text" asp-for="Email" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mx-3 mb-3">
+                    <div class="col-6">
+                        <label asp-for="Phone">Новый номер телефона</label><br />
+                        <input type="tel" asp-for="Phone" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Uaddress">Новый адрес: </label>
+                        <input type="text" asp-for="Uaddress" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-center">
+                    <button class="btn btn-outline-dark col-4" id="btnUpdateAccount" type="submit">Изменить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

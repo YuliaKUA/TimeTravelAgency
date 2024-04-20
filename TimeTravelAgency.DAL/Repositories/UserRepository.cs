@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TimeTravelAgency.DAL.Interfaces;
 using TimeTravelAgency.Domain.Entity;
 using TimeTravelAgency.Domain.Enum;
+using TimeTravelAgency.Domain.ViewModels.Account;
 
 namespace TimeTravelAgency.DAL.Repositories
 {
@@ -28,5 +29,25 @@ namespace TimeTravelAgency.DAL.Repositories
             return await _db.Users.FirstOrDefaultAsync(x => x.ULogin == name);
         }
 
+        public async Task<List<AccountViewModel>> SelectFullAccount(int id)
+        {
+            var account = await (from u in _db.Users
+                                 where u.Id == id
+                                 join p in _db.Uprofiles on u.Id equals p.Id
+                                 select new AccountViewModel
+                                 {
+                                     Id = u.Id,
+                                     ULogin = u.ULogin,
+                                     HashPassword = u.HashPassword,
+                                     URole = u.URole,
+                                     FirstName = p.FirstName,
+                                     LastName = p.LastName,
+                                     Age = p.Age,
+                                     Email = p.Email,
+                                     Phone = p.Phone,
+                                     Uaddress = p.Uaddress
+                                 }).ToListAsync();
+            return account;
+        }
     }
 }

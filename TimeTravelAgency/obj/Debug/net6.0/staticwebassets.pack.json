@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\TimeTravelAgency.bundle.scp.css"
     },
     {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\carousel.css",
+      "PackagePath": "staticwebassets\\css\\carousel.css"
+    },
+    {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\css\\img&icon.css",
       "PackagePath": "staticwebassets\\css\\img&icon.css"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\fonts\\Lora-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Lora-Regular.ttf"
     },
     {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\GetTours\\1.jpg",
@@ -47,6 +55,10 @@
     {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\carousel\\3.jpg",
       "PackagePath": "staticwebassets\\images\\Index\\carousel\\3.jpg"
+    },
+    {
+      "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\slogan.jpg",
+      "PackagePath": "staticwebassets\\images\\Index\\slogan.jpg"
     },
     {
       "Id": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\wwwroot\\images\\Index\\welcome.jpg",

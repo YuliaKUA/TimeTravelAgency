@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using TimeTravelAgency.DAL.Interfaces;
@@ -26,17 +28,6 @@ namespace TimeTravelAgency.Service.Implementations
             var baseResponse = new BaseResponse<Tour>();
             try
             {
-                //var temp_tour = new Tour()
-                //{
-                //    TypeTour = (TypeTour)Convert.ToInt32(tour.TypeTour),
-                //    Title = tour.Title,
-                //    DateStart = Convert.ToDateTime(tour.DateStart),
-                //    DateEnd = Convert.ToDateTime(tour.DateEnd),
-                //    Descriptions = tour.Descriptions,
-                //    Price = Convert.ToDouble(tour.Price),
-                //    NumberOfPlaces = Convert.ToInt32(tour.NumberOfPlaces)
-                //};
-
                 await _tourRepository.Create(tour);
                 baseResponse.StatusCode = StatusCode.OK;
 
@@ -100,6 +91,10 @@ namespace TimeTravelAgency.Service.Implementations
                 temp_tour.Descriptions = tour.Descriptions;
                 temp_tour.Price = Convert.ToDouble(tour.Price);
                 temp_tour.NumberOfPlaces = Convert.ToInt32(tour.NumberOfPlaces);
+                if (tour.FullInfo != null)
+                {
+                    temp_tour.FullInfo = tour.FullInfo;
+                }
 
                 await _tourRepository.Update(temp_tour);
                 baseResponse.StatusCode = StatusCode.OK;
@@ -136,6 +131,10 @@ namespace TimeTravelAgency.Service.Implementations
                 temp_tour.Descriptions = tour.Descriptions;
                 temp_tour.Price = Convert.ToDouble(tour.Price);
                 temp_tour.NumberOfPlaces = Convert.ToInt32(tour.NumberOfPlaces);
+                if (tour.FullInfo != null)
+                {
+                    temp_tour.FullInfo = tour.FullInfo;
+                }
 
                 await _tourRepository.Update(temp_tour);
                 baseResponse.StatusCode = StatusCode.OK;
