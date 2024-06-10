@@ -15,6 +15,7 @@ namespace TimeTravelAgency.DAL.Interfaces
         Task<T> Update(T entity);
         Task Delete(T entity);
         Task UpdateRange(IEnumerable<T> values);
+        Task AddRange(IEnumerable<T> values);
 
         IQueryable<T> GetAll();
 

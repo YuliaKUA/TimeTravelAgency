@@ -7,6 +7,8 @@ using TimeTravelAgency.DAL.Repositories;
 using TimeTravelAgency.Service.Interfaces;
 using TimeTravelAgency.Service.Implementations;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using TimeTravelAgency.Domain.Helpers;
+using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,13 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ITourService, TourService>();
 builder.Services.AddScoped<IPictureService, PictureService>();
 
+builder.Services.AddTransient<DataGenerator>();
+
+
+// NLog: Setup NLog for Dependency injection
+builder.Logging.ClearProviders();
+builder.Logging.SetMinimumLevel(LogLevel.Trace);
+builder.Host.UseNLog();
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

@@ -20,6 +20,13 @@ namespace TimeTravelAgency.DAL.Repositories
             _context = context;
             _dbSet = context.Set<T>();
         }
+
+        public async Task AddRange(IEnumerable<T> values)
+        {
+            _dbSet.AddRange(values);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task Create(T entity)
         {
             _dbSet.Add(entity);

@@ -23,6 +23,14 @@
           "TimeTravelAgency.DAL.dll": {}
         }
       },
+      "Bogus/35.5.0": {
+        "runtime": {
+          "lib/net6.0/Bogus.dll": {
+            "assemblyVersion": "35.5.0.0",
+            "fileVersion": "35.5.0.0"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -892,6 +900,7 @@
       },
       "TimeTravelAgency.Domain/1.0.0": {
         "dependencies": {
+          "Bogus": "35.5.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.0",
@@ -909,6 +918,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Bogus/35.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iCXszbIvvxgfb01bPe/s3R6pQSKX6rpcQWqM7wqDt+lsMogR6fkSWBwqOxLpdXmMB7mgZNNk2hm2M1shoIiekA==",
+      "path": "bogus/35.5.0",
+      "hashPath": "bogus.35.5.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

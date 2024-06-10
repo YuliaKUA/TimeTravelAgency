@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FGRmJeJUb+tuEy0bohUkRxFbmu69c+NpPz7HHgZ14roo0XxsZsbDsE9inNOXpNXvJ+YwdtE89un+T1uudO7BaA==",
+  "dgSpecHash": "DoNkaYKJv2ocNzE7Tqd/dJop+ePqxuzrfulymMZQruS1Tqrk1JxILxU8sFa8UqOVYXegYlIcaEAvw0jtyUGVtw==",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Yulia\\.nuget\\packages\\bogus\\35.5.0\\bogus.35.5.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

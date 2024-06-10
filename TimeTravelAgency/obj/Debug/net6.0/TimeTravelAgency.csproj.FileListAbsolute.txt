@@ -424,6 +424,10 @@ C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\Antlr3.Runtime
 C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\System.Web.Optimization.dll
 C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\WebGrease.dll
-C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\web.config
 C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\System.Collections.Immutable.dll
 C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\System.Reflection.Metadata.dll
+C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\Bogus.dll
+C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\nlog.config
+C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\NLog.dll
+C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Project\net\TimeTravelAgency\TimeTravelAgency\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

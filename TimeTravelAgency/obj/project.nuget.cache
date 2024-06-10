@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TeifSc2ndoIC+8eTe6jb5el6zV62ztihbf8S9U6PbRGpL8fUhm44a4Fm2OBFQqM2tBvEJ2TFipQJwxXf+/I+YQ==",
+  "dgSpecHash": "XMNtCL1CvywOilBy/vPgBPNo8Y55B55cbEV11sGK9X7zjurZv30RoEqnX88cMVfDHB2W4bJyz6FO5kptLN35AQ==",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yulia\\.nuget\\packages\\ajaxmin\\5.14.5506.26202\\ajaxmin.5.14.5506.26202.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\antlr\\3.4.1.9004\\antlr.3.4.1.9004.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\bogus\\35.5.0\\bogus.35.5.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\jquery\\3.7.1\\jquery.3.7.1.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\jquery.validation\\1.20.0\\jquery.validation.1.20.0.nupkg.sha512",
@@ -58,6 +59,9 @@
     "C:\\Users\\Yulia\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\microsoftajax\\4.0.20526\\microsoftajax.4.0.20526.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\newtonsoft.json\\5.0.4\\newtonsoft.json.5.0.4.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\nlog\\5.3.2\\nlog.5.3.2.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\nlog.extensions.logging\\5.3.11\\nlog.extensions.logging.5.3.11.nupkg.sha512",
+    "C:\\Users\\Yulia\\.nuget\\packages\\nlog.web.aspnetcore\\5.3.11\\nlog.web.aspnetcore.5.3.11.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

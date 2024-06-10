@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "teT9CkJp2EjSK+rS6Hp/6X3AM4/3CGGK0MxngcN9evWzRRx+Lqso1HOpXeNr+vHO3WN3d7ZsLxThpsehmJHlnQ==",
+  "dgSpecHash": "IK22E8oX1DlizI+dpOA0Ir3zOOJoc//pHjZZr796d9LhECExZXOL9aqoxUhRuROkDihkIHVwsLHi72mNzdQk2A==",
   "success": true,
   "projectFilePath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Yulia\\.nuget\\packages\\bogus\\35.5.0\\bogus.35.5.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",

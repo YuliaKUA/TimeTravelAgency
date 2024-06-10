@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,24 +18,28 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class TourService : ITourService
     {
+        private readonly ILogger<TourService> _logger;
         private readonly ITourRepository _tourRepository;
 
-        public TourService(ITourRepository tourRepository)
+        public TourService(ITourRepository tourRepository, ILogger<TourService> logger)
         {
             _tourRepository = tourRepository;
+            _logger = logger;
         }
         public async Task<IBaseResponse<Tour>> CreateTour(Tour tour)
         {
+            _logger.LogInformation("Мы перешли в метод CreateTour");
             var baseResponse = new BaseResponse<Tour>();
             try
             {
                 await _tourRepository.Create(tour);
                 baseResponse.StatusCode = StatusCode.OK;
-
+                _logger.LogInformation($"Тур \"{tour.Title}\" успешно создан");
                 return baseResponse;
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, $"[CreateTour]: {ex.Message}");
                 return new BaseResponse<Tour>()
                 {
                     Description = $"[CreateTour] : {ex.Message}",

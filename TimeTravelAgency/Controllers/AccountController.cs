@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using TimeTravelAgency.Domain.Helpers;
+using Microsoft.Ajax.Utilities;
 
 namespace TimeTravelAgency.Controllers
 {
@@ -145,9 +146,13 @@ namespace TimeTravelAgency.Controllers
             User user = new User
             {
                 ULogin = account.ULogin,
-                HashPassword = HashPasswordHelper.HashPassowrd(account.HashPassword),
                 URole = account.URole
             };
+            if (account.HashPassword != null)
+            {
+                account.HashPassword = HashPasswordHelper.HashPassowrd(account.HashPassword);
+            }
+
             Uprofile profile = new Uprofile
             {
                 FirstName = account.FirstName,
@@ -161,6 +166,40 @@ namespace TimeTravelAgency.Controllers
             var response_edit_profile = await _profileService.Edit(id, profile);
             if (response_edit_user.StatusCode == Domain.Enum.StatusCode.OK && response_edit_profile.StatusCode == Domain.Enum.StatusCode.OK)
             {
+                return RedirectToAction("GetUsers");
+            }
+            return RedirectToAction("Error", "Shared");
+        }
+
+        [Authorize(Roles = "Admin, Moderator")]
+        [HttpGet]
+        public async Task<IActionResult> GenerateAccounts()
+        {
+            const int number_of_accounts_generated = 3;
+            List<User> users = new List<User>(number_of_accounts_generated);
+            List<Uprofile> profiles = new List<Uprofile>(number_of_accounts_generated);
+
+            DataGenerator data = new DataGenerator();
+
+            foreach (var user in data.GenerateAccounts().Take(number_of_accounts_generated).ToList())
+            {
+                users.Add(new User { HashPassword = user.HashPassword, ULogin = user.ULogin, URole = user.URole });
+                profiles.Add(new Uprofile { Age = user.Age, Email = user.Email, FirstName = user.FirstName, LastName = user.LastName, Phone = user.Phone, Uaddress = user.Uaddress });
+            }
+
+            var response_add_users = await _accountService.AddRangeUsers(users);
+            if (response_add_users.StatusCode == Domain.Enum.StatusCode.OK)
+            {
+                for (int i = 0; i < number_of_accounts_generated; i++)
+                {
+                    profiles[i].Id = (await _accountService.GetUserByLogin(users[i].ULogin)).Data.Id;
+                }
+
+                var response_add_profiles = await _profileService.AddRangeProfiles(profiles);
+                if (response_add_profiles.StatusCode == Domain.Enum.StatusCode.OK)
+                {
+
+                }
                 return RedirectToAction("GetUsers");
             }
             return RedirectToAction("Error", "Shared");
