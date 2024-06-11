@@ -12,6 +12,6 @@ namespace TimeTravelAgency.DAL.Interfaces
     {
         Task<Picture> GetByTitle(string title);
         Task<Picture> GetById(int id);
-        Task<IEnumerable<Picture>> SelectPictures(ViewName viewName);
+        Task<List<Picture>> SelectPictures(ViewName viewName);
     }
 }

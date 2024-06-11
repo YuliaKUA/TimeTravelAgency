@@ -14,44 +14,46 @@
             <h2>Корзина</h2>
         </div>
 
-        @if (Model.orders != null)
+        @if (Model != null)
         {
-            @foreach (var order in Model.orders)
+            @if (Model.orders != null)
             {
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4 container" style="height: 13rem; overflow: hidden;display: flex;align-items: center;">
-                            @if (Model.pictures.ContainsKey(string.Format("{0}-main", order.TourId)))
-                            {
-                                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.pictures[string.Format("{0}-main", order.TourId)].Image))" class="img-fluid rounded-start" style="width:100%" />
-                            }
-                            else
-                            {
-                                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.pictures["not-found"].Image))" class="img-fluid rounded-start" style="width:100%" />
-                            }
-                            @* <img src="/images/GetTours/1.jpg" class="img-fluid rounded-start" style="width:100%" alt="..."> *@
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center">
-                            <div class="card-body">
-                                <h4 class="card-title">@order.Title</h4>
-                                <p>Даты проведения: @($"{order.DateStart.ToString("D")}") - @($"{order.DateEnd.ToString("D")}")</p>
-                                @* <p>@order.DateCreate</p>
+                @foreach (var order in Model.orders)
+                {
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4 container" style="height: 13rem; overflow: hidden;display: flex;align-items: center;">
+                                @if (Model.pictures.ContainsKey(string.Format("{0}-main", order.TourId)))
+                                {
+                                    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.pictures[string.Format("{0}-main", order.TourId)].Image))" class="img-fluid rounded-start" style="width:100%" />
+                                }
+                                else
+                                {
+                                    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.pictures["not-found"].Image))" class="img-fluid rounded-start" style="width:100%" />
+                                }
+                                @* <img src="/images/GetTours/1.jpg" class="img-fluid rounded-start" style="width:100%" alt="..."> *@
+                            </div>
+                            <div class="col-md-6 d-flex align-items-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">@order.Title</h4>
+                                    <p>Даты проведения: @($"{order.DateStart.ToString("D")}") - @($"{order.DateEnd.ToString("D")}")</p>
+                                    @* <p>@order.DateCreate</p>
                         <p>@EnumExtensions.GetDisplayName(order.Status)</p> *@
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center align-items-center">
+
+                                <a class="btn btn-outline-dark ms-2" asp-controller="Cart" asp-action="DeleteTourFromCart" asp-route-id="@order.Id">Удалить</a>
+
                             </div>
                         </div>
-                        <div class="col-md-2 d-flex justify-content-center align-items-center">
-
-                            <a class="btn btn-outline-dark ms-2" asp-controller="Cart" asp-action="DeleteTourFromCart" asp-route-id="@order.Id">Удалить</a>
-
-                        </div>
                     </div>
-                </div>
 
 
+                }
+
+                <a class="btn btn-dark my-2" asp-controller="Order" asp-action="CreateOrder" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Оплатить заказ</a>
             }
-
-            <a class="btn btn-dark my-2" asp-controller="Order" asp-action="CreateOrder" asp-route-userId="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Оплатить заказ</a>
         }
-
     </div>
 </div>

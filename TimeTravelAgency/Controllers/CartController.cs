@@ -26,6 +26,11 @@ namespace TimeTravelAgency.Controllers
         public async Task<IActionResult> GetCart(int userId)
         {
             var response = await _orderService.GetOrders(userId);
+            if (response.Data == null)
+            {
+                return View();
+            }
+
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 var response_picture = await _pictureService.GetPictures(ViewName.Tour);
@@ -40,14 +45,18 @@ namespace TimeTravelAgency.Controllers
                         };
 
                         if (response_picture.Data != null)
-                            using (var pic = response_picture.Data.GetEnumerator())
+                            foreach (var pic in response_picture.Data)
                             {
-                                while (pic.MoveNext())
-                                {
-                                    ordersWithPictures.pictures.Add(pic.Current.Title, pic.Current);
-                                }
-
+                                ordersWithPictures.pictures.Add(pic.Title, pic);
                             }
+                        //using (var pic = response_picture.Data.GetEnumerator())
+                        //{
+                        //    while (pic.MoveNext())
+                        //    {
+                        //        ordersWithPictures.pictures.Add(pic.Current.Title, pic.Current);
+                        //    }
+
+                        //}
                         return View(ordersWithPictures);
                     }
 

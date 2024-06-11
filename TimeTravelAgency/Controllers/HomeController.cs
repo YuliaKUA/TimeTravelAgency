@@ -31,11 +31,15 @@ namespace TimeTravelAgency.Controllers
         public async Task<IActionResult> Index()
         {
             var response = await _pictureService.GetPictures(ViewName.Index);
+
+            ///for test
+            //return View(response.Data);      
+
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 if (response.Data != null)
                 {
-                    return View(response.Data.ToList());
+                    return View(response.Data);
                 }
                 return View();
             }
@@ -58,6 +62,10 @@ namespace TimeTravelAgency.Controllers
                 pic.Image = imageData;
 
                 var response = await _pictureService.CreatePicture(pic);
+
+                /// for test
+                //return RedirectToAction("Index");
+
                 if (response.StatusCode == Domain.Enum.StatusCode.OK)
                 {
                     return RedirectToAction("Index");
@@ -75,7 +83,7 @@ namespace TimeTravelAgency.Controllers
 
         public IActionResult About()
         {
-            return View();
+            return View("About");
         }
 
         public IActionResult TravelGuide()

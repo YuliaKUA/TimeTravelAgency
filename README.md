@@ -6,7 +6,7 @@
 - EF Core
 - MS SQL Server
 - Аутентификация и авторизация (Cookie)
-- Логгирование
+- Логгирование NLog
 - Юнит тестирование xUnit + Moq
 ### Фронтенд:
 - Html/Css + Bootstrap

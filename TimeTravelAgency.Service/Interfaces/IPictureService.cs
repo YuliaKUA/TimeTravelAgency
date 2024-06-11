@@ -14,7 +14,7 @@ namespace TimeTravelAgency.Service.Interfaces
         Task<IBaseResponse<Picture>> CreatePicture(Picture picture);
         Task<IBaseResponse<bool>> DeletePictureByTitle(string title);
         Task<IBaseResponse<Picture>> GetPictureByTitle(string title);
-        Task<IBaseResponse<IEnumerable<Picture>>> GetPictures(ViewName viewName);
+        Task<IBaseResponse<List<Picture>>> GetPictures(ViewName viewName);
         Task<IBaseResponse<Picture>> Edit(int id, Picture picture);
     }
 }

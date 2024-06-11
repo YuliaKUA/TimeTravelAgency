@@ -29,7 +29,7 @@ namespace TimeTravelAgency.DAL.Repositories
             return await _db.Pictures.FirstOrDefaultAsync(x => x.Title == title);
         }
 
-        public async Task<IEnumerable<Picture>> SelectPictures(ViewName viewName)
+        public async Task<List<Picture>> SelectPictures(ViewName viewName)
         {
             var pictures = await (from p in _db.Pictures
                                   where p.ViewName == viewName || p.ViewName == ViewName.Error
@@ -42,7 +42,7 @@ namespace TimeTravelAgency.DAL.Repositories
                                       Image = p.Image,
                                   }).ToListAsync();
 
-            return pictures.AsEnumerable();
+            return pictures;
         }
     }
 }

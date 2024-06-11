@@ -132,9 +132,9 @@ namespace TimeTravelAgency.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponse<IEnumerable<Picture>>> GetPictures(ViewName viewName)
+        public async Task<IBaseResponse<List<Picture>>> GetPictures(ViewName viewName)
         {
-            var baseResponse = new BaseResponse<IEnumerable<Picture>>();
+            var baseResponse = new BaseResponse<List<Picture>>();
             try
             {
                 var pictures = await _pictureRepository.SelectPictures(viewName);
@@ -152,7 +152,7 @@ namespace TimeTravelAgency.Service.Implementations
             }
             catch (Exception ex)
             {
-                return new BaseResponse<IEnumerable<Picture>>()
+                return new BaseResponse<List<Picture>>()
                 {
                     Description = $"[GetPictures] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
