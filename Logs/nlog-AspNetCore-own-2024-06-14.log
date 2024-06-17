@@ -1,0 +1,78 @@
+2024-06-14 00:59:40.4888|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 00:59:40.5332|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Введен неверный пароль или логин |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 00:59:47.3625|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 00:59:47.3726|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: admin |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:00:03.2995|0|WARN|Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware|Unable to configure Browser Link script injection on the response.  |url: https://localhost/Tour/UpdateTour/1|action: UpdateTour|Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync
+2024-06-14 01:00:09.1213|0|WARN|Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware|Unable to configure Browser Link script injection on the response.  |url: https://localhost/Tour/UpdateTour/9|action: UpdateTour|Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync
+2024-06-14 01:01:10.0814|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:01:10.0924|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: admin |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:02:20.6247|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:02:20.6415|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: admin |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:30:25.1244|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:30:25.1244|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: admin |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:30:39.3095|0|INFO|TimeTravelAgency.Service.Implementations.TourService|Мы перешли в метод CreateTour |url: https://localhost/Tour/CreateTour|action: CreateTour|TimeTravelAgency.Service.Implementations.TourService.CreateTour
+2024-06-14 01:30:39.3477|0|INFO|TimeTravelAgency.Service.Implementations.TourService|Тур "test2" успешно создан |url: https://localhost/Tour/CreateTour|action: CreateTour|TimeTravelAgency.Service.Implementations.TourService.CreateTour
+2024-06-14 01:30:54.9836|0|INFO|TimeTravelAgency.Service.Implementations.TourService|Мы перешли в метод CreateTour |url: https://localhost/Tour/CreateTour|action: CreateTour|TimeTravelAgency.Service.Implementations.TourService.CreateTour
+2024-06-14 01:30:54.9973|0|INFO|TimeTravelAgency.Service.Implementations.TourService|Тур "test2" успешно создан |url: https://localhost/Tour/CreateTour|action: CreateTour|TimeTravelAgency.Service.Implementations.TourService.CreateTour
+2024-06-14 01:31:05.4967|0|WARN|Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware|Unable to configure Browser Link script injection on the response.  |url: https://localhost/Tour/UpdateTour/13|action: UpdateTour|Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync
+2024-06-14 01:31:10.1032|0|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (26ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Date), @p1='?' (DbType = Date), @p2='?' (Size = 1000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Double), @p6='?' (Size = 200), @p7='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Tours] SET [DateEnd] = @p0, [DateStart] = @p1, [Descriptions] = @p2, [FullInfo] = @p3, [NumberOfPlaces] = @p4, [Price] = @p5, [Title] = @p6, [TypeTour] = @p7
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT; |url: https://localhost/Tour/UpdateTour/13|action: UpdateTour|Microsoft.EntityFrameworkCore.Diagnostics.Internal.RelationalCommandDiagnosticsLogger.LogCommandError
+2024-06-14 01:31:10.1388|0|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'TimeTravelAgency.DAL.TimeTravelAgencyContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Не удалось вставить значение NULL в столбец "Title", таблицы "TimeTravelAgency.dbo.Tours"; в столбце запрещены значения NULL. Ошибка в UPDATE.
+Выполнение данной инструкции было прервано.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:7cb80dc1-ba6f-4206-8c5c-2a8b4440c6eb
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken) Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Не удалось вставить значение NULL в столбец "Title", таблицы "TimeTravelAgency.dbo.Tours"; в столбце запрещены значения NULL. Ошибка в UPDATE.
+Выполнение данной инструкции было прервано.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:7cb80dc1-ba6f-4206-8c5c-2a8b4440c6eb
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)|url: https://localhost/Tour/UpdateTour/13|action: UpdateTour|Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.SaveChangesFailedAsync
+2024-06-14 01:43:51.7911|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:43:51.7955|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: admin |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:44:27.5908|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:44:27.5908|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: moderator |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:44:58.2768|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Мы перешли в метод Login |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login
+2024-06-14 01:44:58.2806|0|INFO|TimeTravelAgency.Service.Implementations.AccountService|Успешная аутентификация пользователя: user |url: https://localhost/Account/Login|action: Login|TimeTravelAgency.Service.Implementations.AccountService.Login

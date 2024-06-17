@@ -30,7 +30,7 @@ namespace TimeTravelAgency.Controllers
             var response = await _orderService.AddTourToCart(order);
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("GetCart", "Cart", new { userId = userId });
             }
 
             return RedirectToAction("Error", "Shared");

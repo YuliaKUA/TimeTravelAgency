@@ -6,6 +6,7 @@
     ViewData["Title"] = "Главная";
 }
 
+@* for upload img *@
 @* <form asp-action="CreatePicture" asp-controller="Home" method="post" enctype="multipart/form-data">
     <p>
         <label>Картинка</label>
@@ -59,7 +60,7 @@
             </div>
         </div>
     </div> *@
-
+    @*
     @if (User.IsInRole("Admin"))
     {
         <p>Привет, Админ!</p>
@@ -71,8 +72,8 @@
     else
     {
         <p>Привет, Пользователь!</p>
-        @* <a asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Изменить профиль</a> *@
-    }
+        @*<a asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Изменить профиль</a>
+    } *@
 }
 else
 {
@@ -198,22 +199,22 @@ else
         const cookieAlertAuthenticated = {
             show() {
                 const html = `<div id="cookie-alert-authenticated" class="alert alert-secondary alert-dismissible fade show pe-3" style="position: fixed; bottom: 20px; left: 0; right: 0; max-width: 360px; margin: 0 auto; z-index: 2;">
-                                                                                                <div class="d-flex align-items-center mb-3">
-                                                                                                    <div>
-                                                                                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-                                                                                                            <use xlink:href="#info-fill" />
-                                                                                                        </svg>
-                                                                                                    </div>
-                                                                                                    <div class="flex-fill">
-                                                                                                        <p class="mb-0 ms-2">Вы авторизованы!</p>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div>
-                                                                                                    <div class="text-center">
-                                                                                                        <button type="button" class="btn btn-dark" id="btn-alert-authenticated" data-bs-dismiss="alert">  Понятно  </button>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>`
+                                                                                                                                                                <div class="d-flex align-items-center mb-3">
+                                                                                                                                                                    <div>
+                                                                                                                                                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                                                                                                                                                                            <use xlink:href="#info-fill" />
+                                                                                                                                                                        </svg>
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="flex-fill">
+                                                                                                                                                                        <p class="mb-0 ms-2">Вы авторизованы!</p>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div>
+                                                                                                                                                                    <div class="text-center">
+                                                                                                                                                                        <button type="button" class="btn btn-dark" id="btn-alert-authenticated" data-bs-dismiss="alert">  Понятно  </button>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>`
                 document.body.insertAdjacentHTML('beforeend', html);
             },
             init() {
@@ -236,25 +237,25 @@ else
         const cookieAlertNoAuthenticated = {
             show() {
                 const html = `<div id="cookie-alert-no-authenticated" class="alert alert-secondary alert-dismissible fade show pe-3" style="position: fixed; bottom: 20px; left: 0; right: 0; max-width: 360px; margin: 0 auto; z-index: 2;">
-                                                                <div class="d-flex align-items-center mb-3">
-                                                                    <div>
-                                                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-                                                                            <use xlink:href="#info-fill" />
-                                                                        </svg>
-                                                                    </div>
-                                                                    <div class="flex-fill">
-                                                                        <p class="mb-0 ms-2">Вы НЕ авторизованы!</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div>
-                                                                    <p><strong>Мы используем куки</strong>, потому что без них вообще ничего не работает.</p>
-                                                                </div>
-                                                                <div>
-                                                                    <div class="text-center">
-                                                                        <button type="button" class="btn btn-dark" id="btn-alert-no-authenticated" data-bs-dismiss="alert">  Понятно  </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>`
+                                                                                                                                <div class="d-flex align-items-center mb-3">
+                                                                                                                                    <div>
+                                                                                                                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                                                                                                                                            <use xlink:href="#info-fill" />
+                                                                                                                                        </svg>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="flex-fill">
+                                                                                                                                        <p class="mb-0 ms-2">Вы НЕ авторизованы!</p>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                <div>
+                                                                                                                                    <p><strong>Мы используем куки</strong>, потому что без них вообще ничего не работает.</p>
+                                                                                                                                </div>
+                                                                                                                                <div>
+                                                                                                                                    <div class="text-center">
+                                                                                                                                        <button type="button" class="btn btn-dark" id="btn-alert-no-authenticated" data-bs-dismiss="alert">  Понятно  </button>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>`
                 document.body.insertAdjacentHTML('beforeend', html);
             },
             init() {
