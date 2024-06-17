@@ -5,30 +5,82 @@
     Layout = "_Layout";
 }
 
-<h2>Зарегестрироваться</h2>
-<form asp-action="Register" asp-controller="Account">
-    <div>
-        <div class="validation" asp-validation-summary="All"></div>
-        <p>
-            <label asp-for="Login">Логин</label><br />
-            <input type="text" asp-for="Login" />
-            <span asp-validation-for="Login"></span>
-        </p>
-        <p>
-            <label asp-for="Password">Пароль</label><br />
-            <input type="password" asp-for="Password" />
-            <span asp-validation-for="Password"></span>
-        </p>
-        <p>
-            <label asp-for="PasswordConfirm">Пароль</label><br />
-            <input type="password" asp-for="PasswordConfirm" />
-            <span asp-validation-for="PasswordConfirm"></span>
-        </p>
+<div class="container my-5">
+    <div class="row col-md-6 offset-md-3">
 
-        <p>
-            <input type="submit" value="Зарегестрироваться" />
-        </p>
-        <a asp-controller="Account" asp-action="Login">Войти</a>
+        <form asp-action="Register" asp-controller="Account" class="form-wh-radius needs-validation py-4" novalidate>
+            <div class="d-flex justify-content-center mb-3">
+                <h3>Зарегистрироваться</h3>
+            </div>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div class="row mx-3 mb-3">
+                <label asp-for="Login" class="form-label col-sm-3">Логин</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" asp-for="Login" required>
+                    <span asp-validation-for="Login"></span>
+                </div>
+            </div>
+            <div class="row mx-3 mb-3">
+                <label asp-for="Password" class="form-label col-sm-3">Пароль</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" asp-for="Password" required>
+                    <span asp-validation-for="Password"></span>
+                </div>
+            </div>
+            <div class="row mx-3 mb-2">
+                <label asp-for="PasswordConfirm" class="form-label col-sm-3">Подтвердите пароль</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" asp-for="PasswordConfirm" required>
+                    <span asp-validation-for="PasswordConfirm"></span>
+                </div>
+            </div>
+            <div class="form-check row mx-4 mb-3">
+                <input class="form-check-input col-sm-1 p-0" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label col-sm-11 ps-1" for="invalidCheck2">
+                    Да, я согласен с <a class="link-dark" data-bs-toggle="modal" data-bs-target="#privacyModal" id="privacyLink" asp-controller="Home" asp-action="Privacy">политикой конфиденциальности</a>
+                </label>
+                <div class="invalid-feedback">
+                    Ознакомьтесь с политикой конфиденциальности
+                </div>
+            </div>
+
+            <div class="myModal modal fade" id="privacyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Политика конфиденциальности</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mx-4" id="privacyModalBody">
+                                @* insert content *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button class="btn btn btn-outline-dark col-4 mb-4" type="submit">Зарегистрироваться</button>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item d-flex justify-content-cente link-dark" asp-controller="Account" asp-action="Login">Уже есть аккаунт? Войдите</a>
+        </form>
     </div>
-</form>
+</div>
+
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#privacyLink').click(function (event) {
+                event.preventDefault();
+                var url = $(this).attr('href');
+                $('#privacyModalBody').load(url);
+            });
+        });
+    </script>
+}
 

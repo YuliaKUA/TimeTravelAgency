@@ -1,18 +1,66 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    /*margin-bottom: 50vh;*/
+    padding-top: 60px;
+    background-color: #F8F9FA;
+}
+
+/*navbar*/
+a.navbar-brand {
+    color: black;
+}
+
+.underline-nav-link {
+    position: relative;
+}
+
+    .underline-nav-link::after {
+        content: '';
+        opacity: 0;
+        transition: all 0.2s;
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .underline-nav-link:hover::after {
+        opacity: 1;
+    }
+
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.no-back-border {
+    background: none;
+    border: none;
+}
+
+/*Login & Register form*/
+.form-wh-radius {
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*Footer*/
+.fs-small {
+    font-size: small;
 }

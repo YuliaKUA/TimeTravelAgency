@@ -24,5 +24,7 @@ namespace TimeTravelAgency.Service.Interfaces
         Task<IBaseResponse<User>> GetUserByLogin(string login);
         Task<IBaseResponse<IEnumerable<User>>> GetUsers();
         Task<IBaseResponse<User>> Edit(int id, User user);
+
+        Task<IBaseResponse<bool>> AddRangeUsers(IEnumerable<User> users);
     }
 }

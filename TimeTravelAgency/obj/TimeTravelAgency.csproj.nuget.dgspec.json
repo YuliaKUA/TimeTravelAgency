@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj": {}
+    "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj": {}
   },
   "projects": {
-    "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj": {
+    "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj",
+        "projectUniqueName": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj",
         "projectName": "TimeTravelAgency.DAL",
-        "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj",
+        "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj",
         "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\obj\\",
+        "outputPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -34,8 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
-                "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj"
+              "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
+                "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj"
               }
             }
           }
@@ -44,6 +44,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,6 +58,14 @@
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Routing": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[4.9.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -81,10 +94,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -103,18 +112,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
+    "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj",
+        "projectUniqueName": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj",
         "projectName": "TimeTravelAgency.Domain",
-        "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj",
+        "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj",
         "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\obj\\",
+        "outputPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -143,12 +152,21 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.5.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.17, )"
@@ -180,10 +198,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -202,18 +216,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj": {
+    "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
+        "projectUniqueName": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
         "projectName": "TimeTravelAgency.Service",
-        "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
+        "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj",
         "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\obj\\",
+        "outputPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -236,11 +250,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj": {
-                "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj"
+              "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj": {
+                "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj"
               },
-              "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
-                "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj"
+              "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
+                "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj"
               }
             }
           }
@@ -249,6 +263,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -284,10 +303,6 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.0, )"
             }
@@ -308,18 +323,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj": {
+    "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj",
+        "projectUniqueName": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj",
         "projectName": "TimeTravelAgency",
-        "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj",
+        "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\TimeTravelAgency.csproj",
         "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency\\obj\\",
+        "outputPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -342,14 +357,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj": {
-                "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj"
+              "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj": {
+                "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.DAL\\TimeTravelAgency.DAL.csproj"
               },
-              "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
-                "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj"
+              "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj": {
+                "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Domain\\TimeTravelAgency.Domain.csproj"
               },
-              "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj": {
-                "projectPath": "C:\\Project\\C#\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj"
+              "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj": {
+                "projectPath": "C:\\Project\\net\\TimeTravelAgency\\TimeTravelAgency.Service\\TimeTravelAgency.Service.csproj"
               }
             }
           }
@@ -358,12 +373,29 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AjaxMin": {
+              "target": "Package",
+              "version": "[5.14.5506.26202, )"
+            },
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.5.0, )"
+            },
+            "Microsoft.AspNet.Web.Optimization": {
+              "target": "Package",
+              "version": "[1.1.3, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.17, )"
@@ -396,9 +428,33 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[3.2.6, )"
+            },
+            "Microsoft.jQuery.Unobtrusive.Validation": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "MicrosoftAjax": {
+              "target": "Package",
+              "version": "[4.0.20526, )"
+            },
+            "NLog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.3.11, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[5.3.11, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.7.1, )"
+            },
+            "jQuery.Validation": {
+              "target": "Package",
+              "version": "[1.20.0, )"
             }
           },
           "imports": [
@@ -420,7 +476,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeTravelAgency.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca004da410ea5e5df9b58401e3a4365a1a4eca1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeTravelAgency.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeTravelAgency.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

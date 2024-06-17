@@ -1,12 +1,66 @@
 ﻿@using System.Security.Claims;
+@using System.Web.Optimization;
+@model List<TimeTravelAgency.Domain.Entity.Picture>
 
 @{
     ViewData["Title"] = "Главная";
 }
 
+@* for upload img *@
+@* <form asp-action="CreatePicture" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <p>
+        <label>Картинка</label>
+        <input name="uploadImage" type="file" class="form-control" />
+    </p>
+    <p>
+        <input type="submit" value="Добавить" />
+    </p>
+</form>
+
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                <img style='width:80px; height:60px;' src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" />
+            </td>
+        </tr>
+    }
+} *@
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+    </symbol>
+</svg>
+
+
 @if (User.Identity.IsAuthenticated)
 {
-    <h2>Вы авторизованы!</h2>
+    @* <h2>Вы авторизованы!</h2> *@
+
+    @* <div id="cookie-alert-authenticated" class="alert alert-secondary alert-dismissible fade show pe-3" style="position: fixed; bottom: 20px; left: 0; right: 0; max-width: 360px; margin: 0 auto; z-index: 2;">
+        <div class="d-flex align-items-center mb-3">
+            <div>
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                    <use xlink:href="#info-fill" />
+                </svg>
+            </div>
+            <div class="flex-fill">
+                <p class="mb-0 ms-2">Вы авторизованы!</p>
+            </div>
+        </div>
+        <div>
+            <div class="text-center">
+                <button type="button" class="btn btn-dark" id="btn-alert-authenticated" data-bs-dismiss="alert">  Понятно  </button>
+            </div>
+        </div>
+    </div> *@
+    @*
     @if (User.IsInRole("Admin"))
     {
         <p>Привет, Админ!</p>
@@ -18,15 +72,203 @@
     else
     {
         <p>Привет, Пользователь!</p>
-        <a asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)" >Изменить профиль</a>
-    }
-     <form method="post" asp-controller="Account" asp-action="Logout">
-        <input  type="submit" value="Выход" />
-     </form>
+        @*<a asp-controller="Profile" asp-action="EditProfile" asp-route-id="@Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier).Value)">Изменить профиль</a>
+    } *@
 }
 else
 {
-    <h2>Вы НЕ авторизованы!</h2>
-    <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
-    <a asp-controller="Account" asp-action="Login">Войти</a>
+    @*  <h2>Вы НЕ авторизованы!</h2> *@
+    @* <div id="cookie-alert-no-authenticated" class="alert alert-secondary alert-dismissible fade show pe-3" style="position: fixed; bottom: 20px; left: 0; right: 0; max-width: 360px; margin: 0 auto; z-index: 2;">
+        <div class="d-flex align-items-center mb-3">
+            <div>
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                    <use xlink:href="#info-fill" />
+                </svg>
+            </div>
+            <div class="flex-fill">
+                <p class="mb-0 ms-2">Вы НЕ авторизованы!</p>
+            </div>
+        </div>
+        <div>
+            <p><strong>Мы используем куки</strong>, потому что без них вообще ничего не работает.</p>
+        </div>
+        <div>
+            <div class="text-center">
+                <button type="button" class="btn btn-dark" id="btn-alert-no-authenticated" data-bs-dismiss="alert">  Понятно  </button>
+            </div>
+        </div>
+    </div> *@
+
+
+}
+
+@* welcome container*@
+<div class="container-height-page no-mp">
+    <div class="mouse-parallax">
+        <div class="mouse-parallax-bg">
+        </div>
+        <div class="container-fluid container-height-page img-content">
+            <div class="row container-height-page align-items-center">
+                <div class="col">
+                    <p class="text-white text-welcome text-center">Chrono&Voyage</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* parallax *@
+<script>
+    let bg = document.querySelector('.mouse-parallax-bg');
+    window.addEventListener('mousemove', function (e) {
+        let x = e.clientX / window.innerWidth;
+        let y = e.clientY / window.innerHeight;
+        bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+    });
+</script>
+
+
+
+<div class="container-fluid no-mp bg-white">
+    <div class="row align-items-center container-height-page py-5">
+
+        <div class="row justify-content-evenly py-4 h-100">
+            <div class="col-4 align-self-center">
+                <div class="row">
+                    <h2 class="p-3">Познавая прошлое, исследуй будущее</h2>
+                    <div class="row justify-content-end">
+                        <div class="col-9">
+                            <p class="text-end">
+                                Наше туристическое агентство, специализирующееся на путешествиях во времени,
+                                предоставляет уникальный опыт, позволяющий клиентам исследовать различные исторические эпохи
+                                и важные события в истории человечества, от эры динозавров до империй будущего.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 h-100">
+                <div class="container h-100 overflow-hidden" style="height: 50vh">
+                    <img class="img h-100" src="~/images/index/slogan.jpg" alt="img">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid no-mp bg-white">
+    <div class="row align-items-center container-height-page">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" @* data-bs-interval="false" *@>
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-item-index active">
+                    <div class="container-fluid carousel-img no-mp">
+                        <img src="/images/Index/carousel/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-index">
+                    <div class="container-fluid carousel-img no-mp">
+                        <img src="/images/Index/carousel/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-index">
+                    <div class="container-fluid carousel-img no-mp">
+                        <img src="/images/Index/carousel/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        //localStorage.removeItem('cookie-alert-authenticated');
+
+        const cookieAlertAuthenticated = {
+            show() {
+                const html = `<div id="cookie-alert-authenticated" class="alert alert-secondary alert-dismissible fade show pe-3" style="position: fixed; bottom: 20px; left: 0; right: 0; max-width: 360px; margin: 0 auto; z-index: 2;">
+                                                                                                                                                                <div class="d-flex align-items-center mb-3">
+                                                                                                                                                                    <div>
+                                                                                                                                                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                                                                                                                                                                            <use xlink:href="#info-fill" />
+                                                                                                                                                                        </svg>
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="flex-fill">
+                                                                                                                                                                        <p class="mb-0 ms-2">Вы авторизованы!</p>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div>
+                                                                                                                                                                    <div class="text-center">
+                                                                                                                                                                        <button type="button" class="btn btn-dark" id="btn-alert-authenticated" data-bs-dismiss="alert">  Понятно  </button>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>`
+                document.body.insertAdjacentHTML('beforeend', html);
+            },
+            init() {
+                if (!localStorage.getItem('cookie-alert-authenticated')) {
+                    this.show();
+                    const el = document.querySelector('#cookie-alert-authenticated');
+                    el.addEventListener('closed.bs.alert', e => {
+                        localStorage.setItem('cookie-alert-authenticated', 1);
+                    });
+                }
+            }
+        }
+        cookieAlertAuthenticated.init();
+    </script>
+
+    <script type="text/javascript">
+
+        // localStorage.removeItem('cookie-alert-no-authenticated');
+
+        const cookieAlertNoAuthenticated = {
+            show() {
+                const html = `<div id="cookie-alert-no-authenticated" class="alert alert-secondary alert-dismissible fade show pe-3" style="position: fixed; bottom: 20px; left: 0; right: 0; max-width: 360px; margin: 0 auto; z-index: 2;">
+                                                                                                                                <div class="d-flex align-items-center mb-3">
+                                                                                                                                    <div>
+                                                                                                                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                                                                                                                                            <use xlink:href="#info-fill" />
+                                                                                                                                        </svg>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="flex-fill">
+                                                                                                                                        <p class="mb-0 ms-2">Вы НЕ авторизованы!</p>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                <div>
+                                                                                                                                    <p><strong>Мы используем куки</strong>, потому что без них вообще ничего не работает.</p>
+                                                                                                                                </div>
+                                                                                                                                <div>
+                                                                                                                                    <div class="text-center">
+                                                                                                                                        <button type="button" class="btn btn-dark" id="btn-alert-no-authenticated" data-bs-dismiss="alert">  Понятно  </button>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>`
+                document.body.insertAdjacentHTML('beforeend', html);
+            },
+            init() {
+                if (!localStorage.getItem('cookie-alert-no-authenticated')) {
+                    this.show();
+                    const el = document.querySelector('#cookie-alert-no-authenticated');
+                    el.addEventListener('closed.bs.alert', e => {
+                        localStorage.setItem('cookie-alert-no-authenticated', 1);
+                    });
+                }
+            }
+        }
+        cookieAlertNoAuthenticated.init();
+    </script>
+
 }

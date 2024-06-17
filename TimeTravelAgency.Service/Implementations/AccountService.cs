@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,15 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class AccountService : IAccountService
     {
-        private readonly IBaseRepository<User> _userRepository;
+        private readonly ILogger<AccountService> _logger;
+        private readonly IUserRepository _userRepository;
 
-        public AccountService(IBaseRepository<User> userRepository)
+        public AccountService(IUserRepository userRepository, ILogger<AccountService> logger)
         {
             _userRepository = userRepository;
+            _logger = logger;
         }
+
         public async Task<IBaseResponse<User>> CreateUser(User user)
         {
             try
@@ -95,8 +99,18 @@ namespace TimeTravelAgency.Service.Implementations
                     return baseResponse;
                 }
 
-                temp_user.ULogin = user.ULogin;
-                temp_user.HashPassword = user.HashPassword;
+                if (user.ULogin != null)
+                {
+                    var exist_login = await _userRepository.GetByName(user.ULogin);
+                    if (exist_login == null)
+                    {
+                        temp_user.ULogin = user.ULogin;
+                    }
+                }
+                if (user.HashPassword != null)
+                {
+                    temp_user.HashPassword = user.HashPassword;
+                }
                 temp_user.UProfile = user.UProfile;
 
                 await _userRepository.Update(temp_user);
@@ -204,24 +218,27 @@ namespace TimeTravelAgency.Service.Implementations
         {
             try
             {
+                _logger.LogInformation("Мы перешли в метод Login");
                 var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.ULogin == model.Login);
                 if (user == null)
                 {
+                    _logger.LogInformation($"Пользователь {model.Login} не найден");
                     return new BaseResponse<ClaimsIdentity>()
                     {
-                        Description = "Пользователь не найден"
+                        Description = $"Пользователь {model.Login} не найден"
                     };
                 }
 
                 if (user.HashPassword != HashPasswordHelper.HashPassowrd(model.Password))
                 {
+                    _logger.LogInformation("Введен неверный пароль или логин");
                     return new BaseResponse<ClaimsIdentity>()
                     {
                         Description = "Неверный пароль или логин"
                     };
                 }
                 var result = Authenticate(user);
-
+                _logger.LogInformation("Успешная аутентификация пользователя: " + model.Login);
                 return new BaseResponse<ClaimsIdentity>()
                 {
                     Data = result,
@@ -230,7 +247,7 @@ namespace TimeTravelAgency.Service.Implementations
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, $"[Login]: {ex.Message}");
+                _logger.LogError(ex, $"[Login]: {ex.Message}");
                 return new BaseResponse<ClaimsIdentity>()
                 {
                     Description = ex.Message,
@@ -291,6 +308,28 @@ namespace TimeTravelAgency.Service.Implementations
             };
             return new ClaimsIdentity(claims, "ApplicationCookie",
                 ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+        }
+
+        public async Task<IBaseResponse<bool>> AddRangeUsers(IEnumerable<User> users)
+        {
+            var baseResponse = new BaseResponse<bool>();
+            try
+            {
+                await _userRepository.AddRange(users);
+
+                baseResponse.Data = true;
+                baseResponse.StatusCode = StatusCode.OK;
+
+                return baseResponse;
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<bool>()
+                {
+                    Description = $"[AddRangeUsers] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
         }
     }
 }

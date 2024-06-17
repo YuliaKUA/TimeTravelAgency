@@ -22,6 +22,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTravelAgency.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTravelAgency.Service", "TimeTravelAgency.Service\TimeTravelAgency.Service.csproj", "{DF41A4D8-EE18-445B-AA59-D3AFD1744B08}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{115B4B21-AB5B-4D67-8B0E-F1E54EDF192B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTravelAgency.Tests", "TimeTravelAgency.Tests\TimeTravelAgency.Tests.csproj", "{740FB5D0-6C1B-4B35-89C2-49BD3100B82C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,10 @@ Global
 		{DF41A4D8-EE18-445B-AA59-D3AFD1744B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF41A4D8-EE18-445B-AA59-D3AFD1744B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF41A4D8-EE18-445B-AA59-D3AFD1744B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{740FB5D0-6C1B-4B35-89C2-49BD3100B82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740FB5D0-6C1B-4B35-89C2-49BD3100B82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740FB5D0-6C1B-4B35-89C2-49BD3100B82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740FB5D0-6C1B-4B35-89C2-49BD3100B82C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +60,7 @@ Global
 		{AAB3AA40-84D2-42DC-893B-1F01BB48F418} = {9EB03E70-2AAC-41D0-AF43-27CBA79E5522}
 		{80826FDD-2986-4C25-A5E8-47CFFCF48473} = {5AFC6FDC-41B5-4AC1-AD10-70FEAC0EDA84}
 		{DF41A4D8-EE18-445B-AA59-D3AFD1744B08} = {5FB3731C-C7E5-4CF1-B20F-8178C211ED43}
+		{740FB5D0-6C1B-4B35-89C2-49BD3100B82C} = {115B4B21-AB5B-4D67-8B0E-F1E54EDF192B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B53BC345-75DA-486C-B4E4-9A7CD5DDCB41}

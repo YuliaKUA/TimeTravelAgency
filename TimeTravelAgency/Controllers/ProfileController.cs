@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using TimeTravelAgency.Domain.Entity;
 using TimeTravelAgency.Service.Implementations;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TimeTravelAgency.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly IProfileService _profileService;
@@ -26,7 +28,7 @@ namespace TimeTravelAgency.Controllers
                 return View(response.Data);
             }
 
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Shared");
         }
         [HttpPost]
         public async Task<IActionResult> EditProfile(int id, ProfileViewModel model)
@@ -50,7 +52,7 @@ namespace TimeTravelAgency.Controllers
                 }
 
             }
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Shared");
         }
     }
 }

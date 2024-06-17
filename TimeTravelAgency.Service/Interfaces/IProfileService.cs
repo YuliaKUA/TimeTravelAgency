@@ -16,5 +16,6 @@ namespace TimeTravelAgency.Service.Interfaces
         Task<IBaseResponse<ProfileViewModel>> GetProfileById(int id);
         Task<IBaseResponse<IEnumerable<Uprofile>>> GetProfiles();
         Task<IBaseResponse<Uprofile>> Edit(int id, Uprofile profile);
+        Task<IBaseResponse<bool>> AddRangeProfiles(IEnumerable<Uprofile> profiles);
     }
 }

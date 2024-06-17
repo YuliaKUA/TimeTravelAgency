@@ -6,34 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using TimeTravelAgency.DAL.Interfaces;
 using TimeTravelAgency.Domain.Entity;
+using TimeTravelAgency.Domain.Enum;
+using TimeTravelAgency.Domain.ViewModels.Account;
 
 namespace TimeTravelAgency.DAL.Repositories
 {
-    public class UserRepository : IBaseRepository<User>
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
         private readonly TimeTravelAgencyContext _db;
 
-        public UserRepository(TimeTravelAgencyContext db)
+        public UserRepository(TimeTravelAgencyContext context) : base(context)
         {
-            _db = db;
+            _db = context;
         }
-        public async Task Create(User entity)
-        {
-            _db.Users.Add(entity);
-            await _db.SaveChangesAsync();
-        }
-
-        public async Task Delete(User entity)
-        {
-            _db.Users.Remove(entity);
-            await _db.SaveChangesAsync();
-        }
-
-        public IQueryable<User> GetAll()
-        {
-            return _db.Users;
-        }
-
         public async Task<User> GetById(int id)
         {
             return await _db.Users.FirstOrDefaultAsync(x => x.Id == id);
@@ -44,17 +29,25 @@ namespace TimeTravelAgency.DAL.Repositories
             return await _db.Users.FirstOrDefaultAsync(x => x.ULogin == name);
         }
 
-        public Task<List<User>> SelectAll()
+        public async Task<List<AccountViewModel>> SelectFullAccount(int id)
         {
-            return _db.Users.ToListAsync();
-        }
-
-        public async Task<User> Update(User entity)
-        {
-            _db.Users.Update(entity);
-            await _db.SaveChangesAsync();
-
-            return entity;
+            var account = await (from u in _db.Users
+                                 where u.Id == id
+                                 join p in _db.Uprofiles on u.Id equals p.Id
+                                 select new AccountViewModel
+                                 {
+                                     Id = u.Id,
+                                     ULogin = u.ULogin,
+                                     HashPassword = u.HashPassword,
+                                     URole = u.URole,
+                                     FirstName = p.FirstName,
+                                     LastName = p.LastName,
+                                     Age = p.Age,
+                                     Email = p.Email,
+                                     Phone = p.Phone,
+                                     Uaddress = p.Uaddress
+                                 }).ToListAsync();
+            return account;
         }
     }
 }

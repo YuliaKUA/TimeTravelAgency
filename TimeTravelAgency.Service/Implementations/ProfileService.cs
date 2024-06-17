@@ -15,12 +15,13 @@ namespace TimeTravelAgency.Service.Implementations
 {
     public class ProfileService : IProfileService
     {
-        private readonly IBaseRepository<Uprofile> _profileRepository;
+        private readonly IProfileRepository _profileRepository;
 
-        public ProfileService(IBaseRepository<Uprofile> profileRepository)
+        public ProfileService(IProfileRepository profileRepository)
         {
             _profileRepository = profileRepository;
         }
+
         public async Task<IBaseResponse<bool>> CreateProfileById(int id)
         {
             var baseResponse = new BaseResponse<bool>();
@@ -164,6 +165,28 @@ namespace TimeTravelAgency.Service.Implementations
                 return new BaseResponse<IEnumerable<Uprofile>>()
                 {
                     Description = $"[GetProfiles] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<IBaseResponse<bool>> AddRangeProfiles(IEnumerable<Uprofile> profiles)
+        {
+            var baseResponse = new BaseResponse<bool>();
+            try
+            {
+                await _profileRepository.AddRange(profiles);
+
+                baseResponse.Data = true;
+                baseResponse.StatusCode = StatusCode.OK;
+
+                return baseResponse;
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<bool>()
+                {
+                    Description = $"[AddRangeProfiles] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
                 };
             }

@@ -1,20 +1,86 @@
 ﻿@using TimeTravelAgency.Domain.Enum
+@using TimeTravelAgency.Domain.ViewModels.Account
 @model List<TimeTravelAgency.Domain.Entity.User>
+@inject TimeTravelAgency.Domain.Helpers.DataGenerator data
 
 @{
     ViewBag.Title = "Список пользователей";
     Layout = "_Layout";
 }
 
-<table border="1", solid="grey">
-    <tr><th>Логин</th><th>Роль</th></tr>
-@foreach(var user in Model){
-    <tr>
-        <td>@user.ULogin</td>
-        <td>@EnumExtensions.GetDisplayName(@user.URole)</td>
-       
-        @*<a asp-controller="Tour" asp-action="UpdateUser" asp-route-id="@user.Id" >Изменить</a>
-        <a asp-controller="Tour" asp-action="DeleteUser" asp-route-id="@user.Id" >Удалить</a>*@
-    </tr>
-}
-</table>
+<div class="container-fluid no-mp">
+    <div class="row justify-content-center">
+        <div class="col-8 mt-3">
+            <div class="my-4">
+                <div class="container-fluid text-center mb-3">
+                    <h2>Список пользователей</h2>
+                </div>
+                <table class="table table-striped" border="1" solid="grey">
+                    <thead>
+                        <tr><th>Логин</th><th>Роль</th><th></th><th></th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.ULogin</td>
+                                <td>@EnumExtensions.GetDisplayName(@user.URole)</td>
+                                <td><a class="link-dark" asp-controller="Account" asp-action="UpdateUser" asp-route-id="@user.Id">Изменить</a></td>
+                                <td><a class="link-dark" asp-controller="Account" asp-action="DeleteUser" asp-route-id="@user.Id">Удалить</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a class="btn btn-dark" asp-controller="Account" asp-action="GenerateAccounts">Сгенерировать</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* @data.GenerateAccount().ToString() *@
+
+@* <div class="container-fluid no-mp">
+    <div class="row justify-content-center">
+        <div class="col-8 mt-3">
+            <div class="my-4">
+                <div class="container-fluid text-center mb-3">
+                    <h2>Сгенерировать пользователей</h2>
+                </div>
+                <table class="table table-striped" border="1" solid="grey">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Логин</th>
+                            <th>Роль</th>
+                            <th>Имя</th>
+                            <th>Фамилия</th>
+                            <th>Возраст</th>
+                            <th>Email</th>
+                            <th>Телефон</th>
+                            <th>Адрес</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in data.GenerateAccounts().Take(10).ToList())
+                        {
+                            <tr>
+                                <td>@user.Id</td>
+                                <td>@user.ULogin</td>
+                                <td>@EnumExtensions.GetDisplayName(@user.URole)</td>
+                                <td>@user.FirstName</td>
+                                <td>@user.LastName</td>
+                                <td>@user.Age</td>
+                                <td>@user.Email</td>
+                                <td>@user.Phone</td>
+                                <td>@user.Uaddress</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+ *@

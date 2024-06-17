@@ -7,6 +7,8 @@ using TimeTravelAgency.DAL.Repositories;
 using TimeTravelAgency.Service.Interfaces;
 using TimeTravelAgency.Service.Implementations;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using TimeTravelAgency.Domain.Helpers;
+using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,12 +17,28 @@ string connection = builder.Configuration.GetConnectionString("DefaultConnection
 // добавляем контекст ApplicationContext в качестве сервиса в приложение
 builder.Services.AddDbContext<TimeTravelAgencyContext>(options => options.UseSqlServer(connection));
 
-builder.Services.AddScoped<IBaseRepository<Tour>, TourRepository>();
-builder.Services.AddScoped<ITourService, TourService>();
-builder.Services.AddScoped<IBaseRepository<User>, UserRepository>();
+//
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<ITourRepository, TourRepository>();
+builder.Services.AddScoped<IPictureRepository, PictureRepository>();
+
+
 builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IBaseRepository<Uprofile>, ProfileRepository>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<ITourService, TourService>();
+builder.Services.AddScoped<IPictureService, PictureService>();
+
+builder.Services.AddTransient<DataGenerator>();
+
+
+// NLog: Setup NLog for Dependency injection
+builder.Logging.ClearProviders();
+builder.Logging.SetMinimumLevel(LogLevel.Trace);
+builder.Host.UseNLog();
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
