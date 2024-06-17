@@ -56,7 +56,7 @@ Moderator:
 - The same as the user
 - Ability to add/remove/change tours
 
-The administrator:
+Administrator:
 - The same as the moderator
 - Access to all accounts
 - Ability to delete/change accounts
