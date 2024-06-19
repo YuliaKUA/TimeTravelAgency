@@ -1,7 +1,7 @@
 # TimeTravelAgency - проект для вымышленного туристического агенства
 ## Используемые технологии: 
 ### Бэкенд:
-- ASP.NET Core
+- ASP.NET Core + mvc
 - DDD
 - EF Core
 - MS SQL Server

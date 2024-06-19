@@ -1,7 +1,7 @@
 # TimeTravelAgency - a project for a fictional travel agency
 ## Technologies: 
 ### Backend:
-- ASP.NET Core
+- ASP.NET Core + mvc
 - DDD
 - EF Core
 - MS SQL Server
